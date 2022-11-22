@@ -1,54 +1,32 @@
 <template>
     <div>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-                </a>
+        <template>
+            <b-navbar class="is-black is-fixed-top">
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item">
+                <template #start>
+                    <b-navbar-item href="#">
                         Home
-                    </a>
-
-                    <a class="navbar-item">
+                    </b-navbar-item>
+                    <b-navbar-item href="#">
                         Documentation
-                    </a>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                About
-                            </a>
-                            <a class="navbar-item">
-                                Jobs
-                            </a>
-                            <a class="navbar-item">
-                                Contact
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">
-                                Report an issue
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
+                    </b-navbar-item>
+                    <b-navbar-dropdown label="Info">
+                        <b-navbar-item href="#">
+                            About
+                        </b-navbar-item>
+                        <b-navbar-item href="#">
+                            Contact
+                        </b-navbar-item>
+                    </b-navbar-dropdown>
+                </template>
+                <template #brand>
+                    <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                        <img src="@/assets/star-wars-4.svg"
+                            alt="Lstar wars logo">
+                    </b-navbar-item>
+                </template>
+                <template #end>
+                    <b-navbar-item tag="div">
                         <div class="buttons">
                             <a class="button is-primary">
                                 <strong>Sign up</strong>
@@ -57,12 +35,10 @@
                                 Log in
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-
+                    </b-navbar-item>
+                </template>
+            </b-navbar>
+        </template>
     </div>
 </template>
 
