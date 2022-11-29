@@ -7,9 +7,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'HomeView',
+    name: 'Home',
     component: HomeView
   },
+
 ]
 
 const router = new VueRouter({

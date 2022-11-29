@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="has-text-centered is-family-secondary">
     <NavBar/>
+    <router-view></router-view>
     <Footer></Footer>
   </div>
 </template>
