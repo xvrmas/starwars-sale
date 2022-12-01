@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="caixa">
-            <img src="@/assets/star-wars-4.svg" style="width:200px;margin:20px" alt="">
+        <div class="caixa ">
+            <img src="@/assets/star-wars-4.svg" style="width:250px;margin:20px" alt="">
         </div>
     </div>
 </template>

@@ -2,7 +2,7 @@
    <section class="hero">
         <div class="hero-body">
             <div class="columns">
-                <div class="column is-half  my-5">
+                <div class="column  is-half  my-5">
                     <a href="#">
                         <img class="m-3" src="@/assets/icons/iconmonstr-facebook-6.svg">
                         <img class="m-3" src="@/assets/icons/iconmonstr-instagram-13.svg">
@@ -53,7 +53,6 @@ strong{
 }
 .copy {
     padding: 0;
-    margin-top: 8vh;
     color:rgb(191, 147, 0);
 }
 .alinear {
