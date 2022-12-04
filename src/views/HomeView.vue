@@ -1,16 +1,17 @@
 <template>
     <div class="border ">
         <div class="mb-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae perspiciatis, expedita nobis accusamus voluptas, et temporibus eos, tempora magnam quo ullam error. Ipsam, facere doloribus maxime sunt quis nam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae perspiciatis, expedita
+                nobis accusamus voluptas, et temporibus eos, tempora magnam quo ullam error. Ipsam, facere doloribus
+                maxime sunt quis nam?</p>
         </div>
         <div>
             <a class="columns is-multiline is-centered is-mobile">
-                <div  v-for="(item, i) in getStarShips.results" :key="i">
+                <div v-for="(item, i) in getStarShips.results" :key="i">
                     <div class="card">
                         <div class="card-content">
-                            <a class="nav-link" @click="showInfo(item)">
-                                <p style="color:gray" class="is-size-5 is-bold">{{ item.name }}</p>
-                                <p style="color:gray" class="is-size-6">{{ item.model }}</p>
+                            <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
+                                <p style="color:gray" class="is-size-5 is-family-monospace is-bold">{{ item.name }}</p>
                             </a>
                         </div>
                     </div>
@@ -22,15 +23,15 @@
     </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations, mapState } from 'vuex'
 export default {
     name: 'HomeView',
 
 
     methods: {
         setInfoShip(item) {
-            this.$store.state.infoTechShip = item;
-            console.log(item)
+            this.$store.dispatch("GET_INFOSTARSHIPS",item.url)
+            this.$router.push('infoStarShip')
         },
         increasePage() {
             this.$store.state.page++;
@@ -46,20 +47,17 @@ export default {
             }
             this.$store.dispatch("GET_STARSHIPS")
         },
-        imatge(item) {
-            this.$store.state.numImg = item.url.split(/\D/g).join(''),
-                console.log(this.$store.state.numImg)
-        },
         showImageShip: function (item) {
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
-        showInfo(item) {
-            console.log(item)
-            this.$store.state.infoFilm = (item)
-        }
+
     },
     computed: {
-        ...mapGetters(['getStarShips'])
+        ...mapGetters(['getStarShips']),
+        ...mapMutations(['setShips']),
+        ...mapState(['numImg', 'page'])
+
     },
     created() {
         this.$store.dispatch("GET_STARSHIPS")
@@ -71,13 +69,15 @@ export default {
 .border {
     background-color: black;
 }
-.card{
+
+.card {
     width: 300px;
     height: 120px;
-    background-color: rgb(30, 30, 30) ;
-    border-left:solid  rgb(191, 147, 0) 2px;
+    background-color: rgb(30, 30, 30);
+    border-left: solid rgb(191, 147, 0) 4px;
     margin: 20px;
 }
+
 .container {
     margin-top: -24px;
     margin-bottom: 0px;

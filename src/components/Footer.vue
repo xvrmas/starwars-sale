@@ -59,4 +59,10 @@ strong{
     vertical-align: middle;
     margin: 0px;
 }
+@media only screen and (max-width: 800px){
+    .text{
+    margin-left: 40px;
+
+    }
+}
 </style>

@@ -19,6 +19,7 @@ export default new Vuex.Store({
     },
     getInfoShips(state) {
       return state.infoTechShip
+
     },
     getPage(state) {
       return state.page
@@ -39,11 +40,15 @@ export default new Vuex.Store({
     },
     setImageShips(state, setImageShipsAction) {
       state.imageShips = setImageShipsAction
+    },
+    setInfoShips(state,setInfoShipsAction){
+      state.infoTechShip = setInfoShipsAction
+      console.log('setter->',state.infoTechShip)
     }
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/starships/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.tech/api/starships/?page=${this.state.page}`);
       const ships = await response.json();
       commit('setShips', ships)
     },
@@ -57,8 +62,14 @@ export default new Vuex.Store({
           commit('setImageShips', imageShips)
         }
       } catch (error) {
-        console.log('error')
+        console.log('error url imatge')
       }
+    },
+    async GET_INFOSTARSHIPS({ commit },item) {
+      const response = await fetch(item);
+      const infoShips = await response.json();
+      console.log('fetch->',infoShips)
+      commit('setInfoShips', infoShips)
     },
   },
   modules: {
