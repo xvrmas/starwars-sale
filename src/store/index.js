@@ -43,12 +43,11 @@ export default new Vuex.Store({
     },
     setInfoShips(state,setInfoShipsAction){
       state.infoTechShip = setInfoShipsAction
-      console.log('setter->',state.infoTechShip)
     }
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/starships/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.tech/api/starships/?page=${this.state.page}&limit=10`);
       const ships = await response.json();
       commit('setShips', ships)
     },
@@ -68,7 +67,6 @@ export default new Vuex.Store({
     async GET_INFOSTARSHIPS({ commit },item) {
       const response = await fetch(item);
       const infoShips = await response.json();
-      console.log('fetch->',infoShips)
       commit('setInfoShips', infoShips)
     },
   },
