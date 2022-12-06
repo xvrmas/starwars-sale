@@ -1,8 +1,8 @@
 <template>
-     <div class="border">       
+    <div class="border">
         <div>
             <a class="columns is-multiline is-centered is-mobile">
-                <div v-for="(item, i) in getPeople.results" :key="i">
+                <div v-for="(item, i) in getSpecies.results" :key="i">
                     <div class="card">
                         <div class="card-content">
                             <a class="nav-link">
@@ -21,13 +21,13 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-    name: 'ShowPeople',
-    computed:{
-        ...mapGetters(['getPeople'])
+    name: 'ShowSpecies',
+    computed: {
+        ...mapGetters(['getSpecies'])
     }
 }
-</script>
 
+</script>
 <style scoped>
 .card {
     width: 300px;

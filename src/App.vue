@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="has-text-centered is-family-secondary">
-    <NavBar/>
+    <NavBar />
     <router-view></router-view>
     <Footer></Footer>
   </div>
@@ -10,10 +10,17 @@ import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   name: 'app',
-  components: { NavBar, Footer }
-
+  components: { NavBar, Footer },
+  mounted() {
+    this.$store.dispatch('GET_FILMS')
+    this.$router.push('showFilms')
+  }
 }
 </script>
 <style>
+.border {
+  background-color: black;
+}
+
 
 </style>

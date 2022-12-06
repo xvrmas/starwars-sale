@@ -28,10 +28,7 @@ export default {
 }
 </script>
 
-<style>
-.border {
-    background-color: black;
-}
+<style scoped>
 .card {
     width: 300px;
     height: 120px;

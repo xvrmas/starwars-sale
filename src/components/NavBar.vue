@@ -9,9 +9,9 @@
             <b-button @click="showFilms" type="is-dark m-3">Films</b-button>
             <b-button @click="showPeople" type="is-dark m-3">People</b-button>
             <b-button @click="showPlanets" type="is-dark m-3">Planets</b-button>
-            <b-button type="is-dark m-3">Species</b-button>
+            <b-button @click="showSpecies" type="is-dark m-3">Species</b-button>
             <b-button @click="starships" type="is-dark m-3">Starships</b-button>
-            <b-button type="is-dark m-3">Vehicles</b-button>
+            <b-button @click="showVehicles" type="is-dark m-3">Vehicles</b-button>
         </div>
     </div>
 </template>
@@ -21,11 +21,8 @@ export default {
     name: 'NavBar',
 
     methods: {
-        created() {
-            this.$store.dispatch("GET_FILMS")
-        },
         home() {
-            this.$router.push('/')
+            this.$router.push('/showFilms')
         },
         starships() {
             this.$store.dispatch("GET_STARSHIPS")
@@ -34,6 +31,7 @@ export default {
         showFilms() {
             this.$store.dispatch("GET_FILMS")
             this.$router.push('/showFilms')
+
         },
         showPeople() {
             this.$store.dispatch('GET_PEOPLE')
@@ -42,6 +40,14 @@ export default {
         showPlanets() {
             this.$store.dispatch('GET_PLANETS')
             this.$router.push('showPlanets')
+        },
+        showSpecies (){
+            this.$store.dispatch('GET_SPECIES')
+            this.$router.push('showSpecies')
+        },
+        showVehicles (){
+            this.$store.dispatch('GET_VEHICLES')
+            this.$router.push('showVehicles')
         }
     }
 }
@@ -55,7 +61,6 @@ export default {
     background-color: black;
 }
 
-.botons {
-    border-top: solid 1px;
-}
+
+
 </style>

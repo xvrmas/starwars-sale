@@ -11,6 +11,8 @@ export default new Vuex.Store({
     films: [],
     people: [],
     planets: [],
+    species: [],
+    vehicles: [],
     page: 1,
     condition: false,
     numImg: 1,
@@ -44,7 +46,14 @@ export default new Vuex.Store({
     },
     getPlanets(state) {
       return state.planets
+    },
+    getSpecies(state) {
+      return state.species
+    },
+    getVehicles(state) {
+      return state.vehicles
     }
+
   },
   mutations: {
     setShips(state, setShipsAction) {
@@ -64,11 +73,17 @@ export default new Vuex.Store({
     },
     setPlanets(state, setPlanetsAction) {
       state.planets = setPlanetsAction
+    },
+    setSpecies(state, setSpeciesAction) {
+      state.species = setSpeciesAction
+    },
+    setVehicles(state, setVehiclesAction) {
+      state.vehicles = setVehiclesAction
     }
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/starships/?page=${this.state.page}&limit=10`);
+      const response = await fetch(`https://swapi.tech/api/starships/?page=1&limit=36`);
       const ships = await response.json();
       commit('setShips', ships)
     },
@@ -97,17 +112,28 @@ export default new Vuex.Store({
     },
 
     async GET_PEOPLE({ commit }) {
-      const response = await fetch(`http://swapi.tech/api/people?page=${this.state.page}&limit=82`);
+      const response = await fetch(`http://swapi.tech/api/people?page=1&limit=82`);
       const people = await response.json();
       commit('setPeople', people)
     },
 
-    async GET_PLANETS ({commit}){
-      const response = await fetch(`https://www.swapi.tech/api/planets?page=${this.state.page}&limit=60`);
+    async GET_PLANETS({ commit }) {
+      const response = await fetch(`https://www.swapi.tech/api/planets?page=1&limit=60`);
       const planets = await response.json();
-      console.log(planets)
       commit('setPlanets', planets)
+    },
+    async GET_SPECIES({ commit }) {
+      const response = await fetch(`https://www.swapi.tech/api/species?page=1&limit=37`);
+      const species = await response.json();
+      commit('setSpecies', species)
+    },
+
+    async GET_VEHICLES({ commit }) {
+      const response = await fetch(`https://www.swapi.tech/api/vehicles?page=1&limit=39`);
+      const vehicles = await response.json();
+      commit('setVehicles', vehicles)
     }
+
   },
   modules: {
   }

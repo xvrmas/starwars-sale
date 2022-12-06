@@ -27,3 +27,12 @@ export default {
     }
 }
 </script>
+<style scoped>
+.card {
+    width: 300px;
+    height: 120px;
+    background-color: rgb(30, 30, 30);
+    border-left: solid rgb(191, 147, 0) 4px;
+    margin: 20px;
+}
+</style>

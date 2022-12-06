@@ -14,8 +14,6 @@
                     </div>
                 </div>
             </a>
-            <b-button style="color:gray" class="is-dark m-4" @click="decreasePage">-</b-button>
-            <b-button style="color:gray" class="is-dark m-4" @click="increasePage">+</b-button>
         </div>
     </div>
 </template>
@@ -73,9 +71,4 @@ export default {
     margin: 20px;
 }
 
-.container {
-    margin-top: -24px;
-    margin-bottom: 0px;
-    background-color: black;
-}
 </style>
