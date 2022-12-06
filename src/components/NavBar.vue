@@ -21,21 +21,25 @@ export default {
     name: 'NavBar',
 
     methods: {
+        created() {
+            this.$store.dispatch("GET_FILMS")
+        },
         home() {
             this.$router.push('/')
         },
         starships() {
+            this.$store.dispatch("GET_STARSHIPS")
             this.$router.push('/')
         },
         showFilms() {
             this.$store.dispatch("GET_FILMS")
             this.$router.push('/showFilms')
         },
-        showPeople (){
+        showPeople() {
             this.$store.dispatch('GET_PEOPLE')
             this.$router.push('/showPeople')
         },
-        showPlanets (){
+        showPlanets() {
             this.$store.dispatch('GET_PLANETS')
             this.$router.push('showPlanets')
         }

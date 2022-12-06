@@ -56,9 +56,7 @@ export default {
         ...mapState(['numImg', 'page'])
 
     },
-    created() {
-        this.$store.dispatch("GET_STARSHIPS")
-    }
+   
 }
 </script>
 
