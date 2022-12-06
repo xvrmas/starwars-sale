@@ -1,9 +1,6 @@
 <template>
     <div class="border ">
-        <div class="mb-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae perspiciatis, expedita
-                nobis accusamus voluptas, et temporibus eos, tempora magnam quo ullam error. Ipsam, facere doloribus
-                maxime sunt quis nam?</p>
+        <div>
         </div>
         <div>
             <a class="columns is-multiline is-centered is-mobile">

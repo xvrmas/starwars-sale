@@ -14,6 +14,21 @@ const routes = [
     path: '/infoStarShip',
     name: 'infoStarShip',
     component: () => import('../views/InfoStarShip.vue')
+  },
+  {
+    path: '/ShowFilms',
+    name: 'ShowFilms',
+    component: () => import('../views/ShowFilms.vue')
+  },
+  {
+    path: '/ShowPeople',
+    name: 'ShowPeople',
+    component: () => import('../views/ShowPeople.vue')
+  },
+  {
+    path: '/ShowPlanets',
+    name: 'ShowPlanets',
+    component: () => import('../views/ShowPlanets.vue')
   }
 
 ]
