@@ -13,10 +13,12 @@ export default new Vuex.Store({
     planets: [],
     species: [],
     vehicles: [],
+    infoFilm:[],
     page: 1,
     condition: false,
     numImg: 1,
-    imageShips: ''
+    imageShips: '',
+    imageFilm:''
   },
   getters: {
     getStarShips(state) {
@@ -52,6 +54,12 @@ export default new Vuex.Store({
     },
     getVehicles(state) {
       return state.vehicles
+    },
+    getInfoFilms(state){
+      return state.infoFilm
+    },
+    getImageFilm(state){
+      return state.imageFilm
     }
 
   },
@@ -79,7 +87,14 @@ export default new Vuex.Store({
     },
     setVehicles(state, setVehiclesAction) {
       state.vehicles = setVehiclesAction
+    },
+    setInfoFilms(state, setInfoFilmsAction){
+      state.infoFilm = setInfoFilmsAction
+    },
+    setImageFilm(state,setimageFilmAction){
+      state.imageFilm = setimageFilmAction
     }
+
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
@@ -132,7 +147,27 @@ export default new Vuex.Store({
       const response = await fetch(`https://www.swapi.tech/api/vehicles?page=1&limit=39`);
       const vehicles = await response.json();
       commit('setVehicles', vehicles)
-    }
+    },
+
+    async GET_INFOFILMS({commit},item){
+      const response = await fetch(item);
+      const infoFilm = await response.json();
+      console.log('dispatch',infoFilm)
+      commit('setInfoFilms',infoFilm)
+    },
+    async GET_IMAGEFILM({ commit }) {
+      try {
+        const response = await fetch(`https://starwars-visualguide.com/assets/img/films/${this.state.numImg}.jpg`);
+        const imageFilm = response.url;
+        if (response.status == 404) {
+          this.state.imageFilm = 'https://www.cityofkingman.gov/Home/ShowPublishedImage/2744/636934515291700000'
+        } else {
+          commit('setImageFilm', imageFilm)
+        }
+      } catch (error) {
+        console.log('error url imatge')
+      }
+    },
 
   },
   modules: {

@@ -6,9 +6,7 @@
                   
                 </div>
                 <div class="column is-half adres">
-                    <div class="text">
-                        <p><strong>Star wars fan site</strong></p>
-                       
+                    <div>                      
                     </div>
                 </div>
             </div>

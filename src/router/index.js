@@ -39,7 +39,13 @@ const routes = [
     path: '/ShowVehicles',
     name: 'ShowVehicles',
     component: () => import('../views/ShowVehicles.vue')
+  },
+  {
+    path: '/infoFilms',
+    name: 'infoFilms',
+    component: () => import('../views/infoFilms.vue')
   }
+
 
 ]
 const originalPush = VueRouter.prototype.push
