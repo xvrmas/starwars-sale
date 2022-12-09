@@ -13,8 +13,16 @@
                         <p><strong>Producer: </strong>{{ infoFilm.properties.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.properties.opening_crawl }}</p>
                     </div>
+                    <div class="box">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto,
+                            aspernatur
+                            accusamus esse eligendi qui id asperiores voluptates consectetur eum veritatis quasi, enim
+                            natus
+                            alias deserunt magni et sint molestiae.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -30,7 +38,7 @@ export default {
 }
 </script>
 <style scoped>
-.caixa{
+.caixa {
     background-color: black;
 }
 </style>
