@@ -13,6 +13,7 @@
             <b-button @click="starships" type="is-dark m-3">Starships</b-button>
             <b-button @click="showVehicles" type="is-dark m-3">Vehicles</b-button>
         </div>
+        <div style="border-bottom:solid rgb(191, 147, 0) 1px"></div>
     </div>
 </template>
 

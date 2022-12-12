@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .card {
     width: 39vh;
     height: 60vh;
@@ -52,6 +52,8 @@ export default {
 .title{
     border-top: solid rgb(191, 147, 0) 3px;
     margin-top: 20px;
-
+}
+.border{
+    border-top: solid rgb(191, 147, 0) 1px;
 }
 </style>
