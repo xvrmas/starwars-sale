@@ -52,7 +52,6 @@ export default {
         ...mapGetters(['getStarShips']),
         ...mapMutations(['setShips']),
         ...mapState(['numImg', 'page'])
-
     },
    
 }
@@ -67,7 +66,7 @@ export default {
     width: 300px;
     height: 120px;
     background-color: rgb(30, 30, 30);
-    border-left: solid rgb(191, 147, 0) 4px;
+    border: solid rgb(191, 147, 0) 0.5px;
     margin: 20px;
 }
 

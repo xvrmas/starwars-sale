@@ -152,7 +152,6 @@ export default new Vuex.Store({
     async GET_INFOFILMS({commit},item){
       const response = await fetch(item);
       const infoFilm = await response.json();
-      console.log('dispatch',infoFilm)
       commit('setInfoFilms',infoFilm)
     },
     async GET_IMAGEFILM({ commit }) {

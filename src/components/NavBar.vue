@@ -7,7 +7,7 @@
         </div>
         <div class="botons">
             <b-button @click="showFilms" type="is-dark m-3">Films</b-button>
-            <b-button @click="showPeople" type="is-dark m-3">People</b-button>
+            <b-button @click="showPeople" type="is-dark m-3">Characters</b-button>
             <b-button @click="showPlanets" type="is-dark m-3">Planets</b-button>
             <b-button @click="showSpecies" type="is-dark m-3">Species</b-button>
             <b-button @click="starships" type="is-dark m-3">Starships</b-button>

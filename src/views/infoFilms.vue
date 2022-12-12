@@ -9,8 +9,8 @@
                     <div class="box">
                         <p><strong>Title: </strong> {{ infoFilm.properties.title }}</p>
                         <p><strong>Director: </strong> {{ infoFilm.properties.director }}</p>
-                        <p><strong>Producer: </strong>{{ infoFilm.properties.producer }}</p>
-                        <p><strong>Producer: </strong>{{ infoFilm.properties.release_date }}</p>
+                        <p><strong>Producer(s): </strong>{{ infoFilm.properties.producer }}</p>
+                        <p><strong>Release date: </strong>{{ infoFilm.properties.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.properties.opening_crawl }}</p>
                     </div>
                     <div class="box">
