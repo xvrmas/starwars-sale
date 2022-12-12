@@ -6,7 +6,11 @@
                     <div class="card">
                         <div class="card-content">
                             <a class="nav-link">
-                                <p style="color:gray" class="is-size-5 is-family-monospace is-bold">{{
+                                <figure class="image">
+                                    <img :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`)"
+                                        alt="image film">
+                                </figure>
+                                <p style="color:gray" class="title is-size-5 is-family-monospace is-bold">{{
                                         item.name
                                 }}</p>
                             </a>
@@ -32,10 +36,9 @@ export default {
 </script>
 <style scoped>
 .card {
-    width: 300px;
-    height: 120px;
+    width: 45vh;
+    height: 40vh;
     background-color: rgb(30, 30, 30);
-    border-bottom: solid rgb(191, 147, 0) 4px;
     margin: 20px;
 }
 </style>

@@ -1,19 +1,24 @@
 <template>
-    <div class="border ">
-        <div>
-        </div>
-        <div>
-            <a class="columns is-multiline is-centered is-mobile">
-                <div v-for="(item, i) in getStarShips.results" :key="i">
-                    <div class="card">
-                        <div class="card-content">
-                            <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
-                                <p style="color:gray" class="is-size-5 is-family-monospace is-bold">{{ item.name }}</p>
-                            </a>
+    <div class="contenidor">
+        <div class="border ">
+            <div>
+                <a class="columns is-multiline is-centered is-mobile">
+                    <div v-for="(item, i) in getStarShips.results" :key="i">
+                        <div class="card">
+                            <div class="card-content">
+                                <figure class="image">
+                                    <img :src="(`https://starwars-visualguide.com/assets/img/starships/${item.uid}.jpg`)"
+                                        alt="image film">
+                                </figure>
+                                <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
+                                    <p style="color:gray" class="title is-size-5 is-family-monospace is-bold">{{ item.name }}
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -25,7 +30,7 @@ export default {
 
     methods: {
         setInfoShip(item) {
-            this.$store.dispatch("GET_INFOSTARSHIPS",item.url)
+            this.$store.dispatch("GET_INFOSTARSHIPS", item.url)
             this.$router.push('infoStarShip')
         },
         increasePage() {
@@ -49,11 +54,11 @@ export default {
 
     },
     computed: {
-        ...mapGetters(['getStarShips']),
+        ...mapGetters(['getStarShips', 'getImageShips']),
         ...mapMutations(['setShips']),
         ...mapState(['numImg', 'page'])
     },
-   
+
 }
 </script>
 
@@ -63,11 +68,12 @@ export default {
 }
 
 .card {
-    width: 300px;
-    height: 120px;
+    width: 40vh;
+    height: 40vh;
     background-color: rgb(30, 30, 30);
-    border: solid rgb(191, 147, 0) 0.5px;
     margin: 20px;
 }
-
+.contenidor{
+    background-color: black;
+}
 </style>
