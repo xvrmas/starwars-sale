@@ -12,7 +12,7 @@
                                 </figure>
                                 <p style="color:gray" class="title is-size-5 is-family-monospace is-bold">{{
                                         item.name
-                                }}</p>
+                                }} {{item.uid}}</p>
                             </a>
                         </div>
                     </div>
