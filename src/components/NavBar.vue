@@ -13,7 +13,6 @@
             <a href="#" @click="starships" class="boto_nav">Starships</a>
             <a href="#" @click="showVehicles" class="boto_nav">Vehicles</a>
         </div>
-        <!-- <div style="border-bottom:solid rgb(191, 147, 0) 1px"></div> -->
     </div>
 </template>
 
@@ -66,7 +65,9 @@ export default {
 }
 .botons{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .boto_nav{
     color:gray;
@@ -77,7 +78,8 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color:rgb(191, 147, 0);
+    border-bottom: solid rgb(191, 147, 0) 2px ;
+
 }
 a:focus{
     color:rgb(191, 147, 0);

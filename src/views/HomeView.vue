@@ -2,22 +2,22 @@
     <div class="contenidor">
         <div class="border ">
             <div>
-                <a class="columns is-multiline is-centered is-mobile">
+                <div class="columns is-multiline is-centered is-mobile">
                     <div v-for="(item, i) in getStarShips.results" :key="i">
                         <div class="card">
-                            <div class="card-content">
+                            <div class="card-image">
                                 <figure class="image">
                                     <img :src="(`https://starwars-visualguide.com/assets/img/starships/${item.uid}.jpg`)"
                                         alt="image film">
                                 </figure>
                                 <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
-                                    <p style="color:gray" class="title is-size-5 is-family-monospace is-bold">{{ item.name }}
+                                    <p style="color:gray" class="title is-size-5">{{ item.name }}
                                     </p>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -75,5 +75,12 @@ export default {
 }
 .contenidor{
     background-color: black;
+}
+.title{
+    margin-top: 20px;
+}
+img{
+    border-bottom: solid rgb(191, 147, 0) 3px;
+
 }
 </style>

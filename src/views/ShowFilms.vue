@@ -4,12 +4,12 @@
             <div class="columns is-multiline is-centered is-mobile">
                 <div v-for="(item, i) in getFilms.result" :key="i">
                     <div class="card">
-                        <div class="card-content">
+                        <div class="card-image">
                             <figure class="image" >
                                 <img :src="require(`@/assets/portada/${item.uid}.jpg`)" alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
-                                <p style="color:gray" class="title is-size-5 is-family-monospace is-bold">{{
+                                <p style="color:gray" class="title is-size-5">{{
                                         item.properties.title
                                 }}</p>
                             </a>
@@ -42,18 +42,19 @@ export default {
 }
 </script>
 
-<style >
+<style scoped >
 .card {
     width: 39vh;
-    height: 60vh;
+    height: 67vh;
     background-color: rgb(30, 30, 30);
     margin: 20px;
+
 }
 .title{
-    border-top: solid rgb(191, 147, 0) 3px;
     margin-top: 20px;
 }
-.border{
-    border-top: solid rgb(191, 147, 0) 1px;
+img{
+    border-bottom: solid rgb(191, 147, 0) 3px;
+
 }
 </style>
