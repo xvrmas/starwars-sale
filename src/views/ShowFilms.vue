@@ -1,7 +1,7 @@
 <template>
     <div class="border">
         <div>
-            <a class="columns is-multiline is-centered is-mobile">
+            <div class="columns is-multiline is-centered is-mobile">
                 <div v-for="(item, i) in getFilms.result" :key="i">
                     <div class="card">
                         <div class="card-content">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </template>

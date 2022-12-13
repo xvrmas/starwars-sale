@@ -6,20 +6,26 @@
             </a>
         </div>
         <div class="botons">
-            <b-button @click="showFilms" type="is-dark m-3">Films</b-button>
-            <b-button @click="showPeople" type="is-dark m-3">Characters</b-button>
-            <b-button @click="showPlanets" type="is-dark m-3">Planets</b-button>
-            <b-button @click="showSpecies" type="is-dark m-3">Species</b-button>
-            <b-button @click="starships" type="is-dark m-3">Starships</b-button>
-            <b-button @click="showVehicles" type="is-dark m-3">Vehicles</b-button>
+            <a href="#" @click="showFilms"  class="boto_nav">Films</a>
+            <a href="#" @click="showPeople" class="boto_nav">Characters</a>
+            <a href="#" @click="showPlanets" class="boto_nav">Planets</a>
+            <a href="#" @click="showSpecies" class="boto_nav">Species</a>
+            <a href="#" @click="starships" class="boto_nav">Starships</a>
+            <a href="#" @click="showVehicles" class="boto_nav">Vehicles</a>
         </div>
-        <div style="border-bottom:solid rgb(191, 147, 0) 1px"></div>
+        <!-- <div style="border-bottom:solid rgb(191, 147, 0) 1px"></div> -->
     </div>
 </template>
 
 <script>
 export default {
     name: 'NavBar',
+
+    data (){
+        return{
+             boton: document.getElementsByClassName("boto")
+        }
+    },
 
     methods: {
         home() {
@@ -50,6 +56,7 @@ export default {
             this.$store.dispatch('GET_VEHICLES')
             this.$router.push('showVehicles')
         }
+       
     }
 }
 </script>
@@ -57,7 +64,25 @@ export default {
 .contenidor {
     background-color: black;
 }
-
+.botons{
+    display: flex;
+    justify-content: center;
+}
+.boto_nav{
+    color:gray;
+    margin:20px;
+    font-size: x-large;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:rgb(191, 147, 0);
+}
+a:focus{
+    color:rgb(191, 147, 0);
+    border-bottom: solid rgb(191, 147, 0) 2px ;
+}
 .caixa {
     background-color: black;
 }
