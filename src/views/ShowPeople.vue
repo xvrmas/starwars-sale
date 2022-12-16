@@ -9,7 +9,7 @@
                                 <img :src="(`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`)"
                                     alt="image film">
                             </figure>
-                            <a class="nav-link">
+                            <a class="nav-link" @click="setInfoFilms(item)">
                                 <p style="color:gray" class="title is-size-5">{{
                                         item.name
                                 }}</p>
@@ -28,6 +28,12 @@ export default {
     name: 'ShowPeople',
     computed: {
         ...mapGetters(['getPeople'])
+    },
+    methods: {
+        setInfoFilms(item) {
+            this.$store.dispatch('GET_INFOCHARACTERS', item.url)
+            this.$router.push('/infoCharacters')
+        }
     }
 }
 </script>
@@ -39,10 +45,12 @@ export default {
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }
-.title{
+
+.title {
     margin-top: 20px;
 }
-img{
+
+img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }

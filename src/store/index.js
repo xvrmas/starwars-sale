@@ -13,12 +13,13 @@ export default new Vuex.Store({
     planets: [],
     species: [],
     vehicles: [],
-    infoFilm:[],
+    infoFilm: [],
+    infoCharacters: [],
     page: 1,
     condition: false,
     numImg: 1,
     imageShips: '',
-    imageFilm:''
+    imageFilm: ''
   },
   getters: {
     getStarShips(state) {
@@ -55,11 +56,14 @@ export default new Vuex.Store({
     getVehicles(state) {
       return state.vehicles
     },
-    getInfoFilms(state){
+    getInfoFilms(state) {
       return state.infoFilm
     },
-    getImageFilm(state){
+    getImageFilm(state) {
       return state.imageFilm
+    },
+    getInfoCharacters(state) {
+      return state.infoCharacters
     }
 
   },
@@ -88,11 +92,14 @@ export default new Vuex.Store({
     setVehicles(state, setVehiclesAction) {
       state.vehicles = setVehiclesAction
     },
-    setInfoFilms(state, setInfoFilmsAction){
+    setInfoFilms(state, setInfoFilmsAction) {
       state.infoFilm = setInfoFilmsAction
     },
-    setImageFilm(state,setimageFilmAction){
+    setImageFilm(state, setimageFilmAction) {
       state.imageFilm = setimageFilmAction
+    },
+    setInfoCharacters(state, setInfoCharactersAction) {
+      state.infoCharacters = setInfoCharactersAction
     }
 
   },
@@ -149,10 +156,10 @@ export default new Vuex.Store({
       commit('setVehicles', vehicles)
     },
 
-    async GET_INFOFILMS({commit},item){
+    async GET_INFOFILMS({ commit }, item) {
       const response = await fetch(item);
       const infoFilm = await response.json();
-      commit('setInfoFilms',infoFilm)
+      commit('setInfoFilms', infoFilm)
     },
     async GET_IMAGEFILM({ commit }) {
       try {
@@ -167,6 +174,13 @@ export default new Vuex.Store({
         console.log('error url imatge')
       }
     },
+
+    async GET_INFOCHARACTERS({ commit }, item) {
+      const response = fetch(item)
+      const infoCharaters = await (await response).json();
+      commit('setInfoCharacters', infoCharaters)
+
+    }
 
   },
   modules: {
