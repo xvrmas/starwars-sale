@@ -49,6 +49,16 @@ const routes = [
     path: '/infoCharacters',
     name: 'infoCharacters',
     component: () => import('../views/infoCharacters.vue')
+  },
+  {
+    path: '/infoPlanets',
+    name: 'infoPlanets',
+    component: () => import('../views/infoPlanets.vue')
+  },
+  {
+    path: '/infoSpecies',
+    name: 'infoSpecies',
+    component: () => import('../views/infoSpecies')
   }
 
 

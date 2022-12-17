@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="botons">
-            <a @click="showFilms" href="#" class="boto_nav">Films</a>
+            <a @click="showFilms"  href="#" class="boto_nav">Films</a>
             <a @click="showPeople" href="#" class="boto_nav">Characters</a>
             <a @click="showPlanets" href="#" class="boto_nav">Planets</a>
             <a @click="showSpecies" href="#" class="boto_nav">Species</a>
@@ -33,6 +33,10 @@ export default {
         starships() {
             this.$store.dispatch("GET_STARSHIPS")
             this.$router.push('/')
+        },
+        showImageShip () {
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
+            return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
         showFilms() {
             this.$router.push('/showFilms')

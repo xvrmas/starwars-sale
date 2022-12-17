@@ -9,7 +9,7 @@
                                 <img :src="(`https://starwars-visualguide.com/assets/img/species/${item.uid}.jpg`)"
                                     alt="image film">
                             </figure>
-                            <a class="nav-link">
+                            <a class="nav-link" @click="setInfoSpecies(item)">
                                 <p style="color:gray" class="title is-size-5">{{
                                         item.name
                                 }}</p>
@@ -28,6 +28,12 @@ export default {
     name: 'ShowSpecies',
     computed: {
         ...mapGetters(['getSpecies'])
+    },
+    methods:{
+        setInfoSpecies(item){
+            this.$router.push('infoSpecies')
+            this.$store.dispatch('GET_INFOSPECIES', item.url)
+        }
     }
 }
 

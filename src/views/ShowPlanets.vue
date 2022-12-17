@@ -10,7 +10,7 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link">
-                                <p style="color:gray" class="title is-size-5">{{
+                                <p style="color:gray"  @click="setInfoPlanets(item)" class="title is-size-5">{{
                                         item.name
                                 }}</p>
                             </a>
@@ -28,6 +28,12 @@ export default {
     name: 'ShowPlanets',
     computed: {
         ...mapGetters(['getPlanets'])
+    },
+    methods:{
+        setInfoPlanets(item){
+            this.$router.push('infoPlanets')
+            this.$store.dispatch('GET_INFOPLANET', item.url)
+        }
     }
 }
 </script>
