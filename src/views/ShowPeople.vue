@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img :src="(`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`)"
+                                <img :src="require(`@/assets/characters/${item.uid}.jpg`)"
                                     alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilms(item)">
