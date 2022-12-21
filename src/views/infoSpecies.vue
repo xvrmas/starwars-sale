@@ -20,18 +20,8 @@
                         <p><strong>Skin color: </strong> {{ getInfoSpecies.result.properties.skin_colors }}</p>
                         <p><strong>Eye color: </strong> {{ getInfoSpecies.result.properties.eye_colors }}</p>
                         <p><strong>Languaje: </strong> {{ getInfoSpecies.result.properties.language }}</p>
-
-
-
-
                     </div>
-                    <div class="box">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto,
-                            aspernatur
-                            accusamus esse eligendi qui id asperiores voluptates consectetur eum veritatis quasi, enim
-                            natus
-                            alias deserunt magni et sint molestiae.</p>
-                    </div>
+                   
                 </div>
             </div>
 

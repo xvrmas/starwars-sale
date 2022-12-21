@@ -13,28 +13,26 @@
                         <p><strong>Release date: </strong>{{ infoFilm.properties.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.properties.opening_crawl }}</p>
                     </div>
-                    <div class="box">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto,
-                            aspernatur
-                            accusamus esse eligendi qui id asperiores voluptates consectetur eum veritatis quasi, enim
-                            natus
-                            alias deserunt magni et sint molestiae.</p>
-                    </div>
+                    <relatedCharacters :infoFilm="infoFilm" ></relatedCharacters>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from 'vuex'
+import relatedCharacters from '@/components/relatedCharacters.vue';
 export default {
     name: 'infoFilms',
+    components: { relatedCharacters },
+    props:['infoFilm'],
     computed: {
         ...mapState(['infoFilm']),
         ...mapGetters(['getImageFilm'])
-    }
+    },
+
+
 }
 </script>
 <style scoped>
