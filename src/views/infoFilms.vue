@@ -5,15 +5,20 @@
                 <div class="column is-half mt-3">
                     <img :src="getImageFilm">
                 </div>
+                {{ infoFilm }}
                 <div class="column has-text-left is-half mt-3">
                     <div class="box">
-                        <p><strong>Title: </strong> {{ infoFilm.properties.title }}</p>
+                        <p><strong>Title: </strong> {{ infoFilm.results.title }}</p>
                         <p><strong>Director: </strong> {{ infoFilm.properties.director }}</p>
                         <p><strong>Producer(s): </strong>{{ infoFilm.properties.producer }}</p>
                         <p><strong>Release date: </strong>{{ infoFilm.properties.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.properties.opening_crawl }}</p>
                     </div>
-                    <relatedCharacters :infoFilm="infoFilm" ></relatedCharacters>
+                    <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
+                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
+                    <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
+                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>
+                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
                 </div>
             </div>
         </div>
@@ -23,10 +28,14 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import relatedCharacters from '@/components/relatedCharacters.vue';
+import relatedPlanets from '@/components/relatedPlanets.vue';
+import relatedSpecies from '@/components/relatedSpecies.vue';
+import relatedStarships from '@/components/relatedStarships.vue';
+import relatedvehicles from '@/components/relatedVehicles.vue'
 export default {
     name: 'infoFilms',
-    components: { relatedCharacters },
-    props:['infoFilm'],
+    components: { relatedCharacters, relatedPlanets, relatedSpecies, relatedStarships ,relatedvehicles},
+    props: ['infoFilm'],
     computed: {
         ...mapState(['infoFilm']),
         ...mapGetters(['getImageFilm'])

@@ -43,3 +43,8 @@ export default {
     }
 }
 </script>
+<style>
+.caixa{
+    background-color: black;
+}
+</style>
