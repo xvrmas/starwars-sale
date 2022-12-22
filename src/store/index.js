@@ -18,6 +18,7 @@ export default new Vuex.Store({
     infoPlanets: [],
     infoSpecies: [],
     infoVehicles: [],
+    infoRelatedCharaters: [],
     page: 1,
     condition: false,
     numImg: 1,
@@ -76,6 +77,9 @@ export default new Vuex.Store({
     },
     getInfoVehicles(state) {
       return state.infoVehicles
+    },
+    getinfoRelatedCharaters(state) {
+      return state.infoRelatedCharaters
     }
 
   },
@@ -121,6 +125,9 @@ export default new Vuex.Store({
     },
     setInfoVehicles(state, setInfoVehiclesAction) {
       state.infoVehicles = setInfoVehiclesAction
+    },
+    setinfoRelatedCharaters(state, setinfoRelatedCharatersAction) {
+      state.infoRelatedCharaters = setinfoRelatedCharatersAction
     }
 
   },
@@ -217,6 +224,15 @@ export default new Vuex.Store({
       const response = fetch(item)
       const infoVehicles = await (await response).json();
       commit('setInfoVehicles', infoVehicles)
+    },
+    async GET_RELATEDCHARACTERS({ commit }, item) {
+      console.log(item)
+      for (let i = 0; i < item.length; i++) {
+        const response = fetch(item.characters)
+        const infoRelatedCharaters = await (await response).json();
+        console.log('uuuuuuuuuuuuuuuaaaaaaaaaaaaaa')
+      commit('setinfoRelatedCharaters', infoRelatedCharaters)
+    }
     }
   },
   modules: {
