@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <p class="is-size-5 is-bold">Related Vehicles</p>
+        <p class="titol is-size-5 is-bold">Related Vehicles</p>
         <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in vehicles" :key="i">
                 <div class="carta">
@@ -46,17 +46,3 @@ export default {
 }
 </script>
 
-<style>
-.carta {
-    padding: 0px;
-    width: 15vh;
-    height: 28vh;
-    margin: 5px;
-    border-radius: 5%;
-
-}
-
-p {
-    margin-bottom: 20px;
-}
-</style>
