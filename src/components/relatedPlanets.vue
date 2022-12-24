@@ -9,7 +9,7 @@
                                         <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)" alt="image film">
                                     </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p style="color:gray" class="title is-size-5"> {{ item.name }}</p>
+                            <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
