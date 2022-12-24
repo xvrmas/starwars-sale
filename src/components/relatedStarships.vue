@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <p class="is-size-5 is-bold">Related starships</p>
-        <div class="columns is-multiline is-centered ">
+        <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in starships" :key="i">
                 <div class="carta">
                     <div>
@@ -46,7 +46,25 @@ export default {
                 const infoStarShip = await (await response).json();
                 this.starships.push(infoStarShip.result.properties)
             }
-        }
+        },
+        showImageShip: function (item) {
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
+            return this.$store.dispatch("GET_IMAGESHIPS", item)
+        },
     }
 }
 </script>
+<style>
+.carta {
+    padding: 0px;
+    width: 15vh;
+    height: 28vh;
+    margin: 5px;
+    border-radius: 5%;
+
+}
+
+p {
+    margin-bottom: 20px;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <p class="is-size-5 is-bold">Related species</p>
-        <div class="columns is-multiline is-centered ">
+        <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in species" :key="i">
                 <div class="carta">
                     <div>
@@ -45,3 +45,17 @@ export default {
     }
 }
 </script>
+<style>
+.carta {
+    padding: 0px;
+    width: 15vh;
+    height: 28vh;
+    margin: 5px;
+    border-radius: 5%;
+
+}
+
+p {
+    margin-bottom: 20px;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <p class="is-size-5 is-bold">Related planets</p>
-        <div class="columns is-multiline is-centered ">
+        <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in planetes" :key="i">
                 <div class="carta">
                     <div >
@@ -9,7 +9,7 @@
                                         <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)" alt="image film">
                                     </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p style="color:gray" class="title is-size-6 is-centered"> {{ item.name }}</p>
+                            <p style="color:gray" class="title is-size-5"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
@@ -47,3 +47,17 @@ export default {
 }
 
 </script>
+<style>
+.carta {
+    padding: 0px;
+    width: 15vh;
+    height: 28vh;
+    margin: 5px;
+    border-radius: 5%;
+
+}
+
+p {
+    margin-bottom: 20px;
+}
+</style>
