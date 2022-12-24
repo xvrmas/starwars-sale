@@ -3,8 +3,8 @@
         <p class="is-size-5 is-bold">Related species</p>
         <div class="columns is-multiline is-centered ">
             <div v-for="(item, i) in species" :key="i">
-                <div class="card carta">
-                    <div class="card-image">
+                <div class="carta">
+                    <div>
                         <figure class="image">
                             <img
                                 :src="(`https://starwars-visualguide.com/assets/img/species/${item.url.split(/\D/g).join('')}.jpg`)">

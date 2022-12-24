@@ -4,10 +4,10 @@
         <div class="separador"></div>
         <div class="columns is-multiline is-centered ">
             <div v-for="(item, i) in personatges" :key="i">
-                <div class="card carta">
-                    <div class="card-image">
+                <div class="carta">
+                    <div>
                         <figure class="image">
-                            <img class="image is-96x96 is-rounded" :src="require(`@/assets/characters/${item.url.split(/\D/g).join('')}.jpg`)"
+                            <img  :src="require(`@/assets/characters/${item.url.split(/\D/g).join('')}.jpg`)"
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfo(item)">
@@ -62,16 +62,16 @@ export default {
 </script>
 <style>
 .carta {
-    padding: 20px;
-    width: 20vh;
-    height: 180px;
+    padding: 0px;
+    width: 15vh;
+    height:28vh;
     margin: 5px;
     background-color: rgb(231, 229, 229);
+    border-radius: 5%;
 
 }
 
-.separador {
-    margin-top: 2px;
-}
+
+
 
 </style>

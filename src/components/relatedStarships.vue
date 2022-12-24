@@ -1,17 +1,19 @@
 <template>
     <div class="box">
-        <p>Related starships</p>
+        <p class="is-size-5 is-bold">Related starships</p>
         <div class="columns is-multiline is-centered ">
-        <div v-for="(item, i) in starships" :key="i">
-                <div class="card carta">
-                    <div class="card-image">
+            <div v-for="(item, i) in starships" :key="i">
+                <div class="carta">
+                    <div>
                         <figure class="image">
-                                        <img :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`" alt="image film">
-                                    </figure>
-                        <a class="nav-link" @click="setInfoStarships(item), showImageShip(item)">
-                            <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
-                        </a>
+                            <img :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
+                                alt="image film">
+                        </figure>
+
                     </div>
+                    <a class="nav-link" @click="setInfoStarships(item), showImageShip(item)">
+                        <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
+                    </a>
                 </div>
             </div>
         </div>
