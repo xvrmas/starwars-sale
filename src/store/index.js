@@ -18,7 +18,6 @@ export default new Vuex.Store({
     infoPlanets: [],
     infoSpecies: [],
     infoVehicles: [],
-    infoRelatedCharaters: [],
     page: 1,
     condition: false,
     numImg: 1,
@@ -78,9 +77,7 @@ export default new Vuex.Store({
     getInfoVehicles(state) {
       return state.infoVehicles
     },
-    getinfoRelatedCharaters(state) {
-      return state.infoRelatedCharaters
-    }
+  
 
   },
   mutations: {
@@ -126,9 +123,6 @@ export default new Vuex.Store({
     setInfoVehicles(state, setInfoVehiclesAction) {
       state.infoVehicles = setInfoVehiclesAction
     },
-    setinfoRelatedCharaters(state, setinfoRelatedCharatersAction) {
-      state.infoRelatedCharaters = setinfoRelatedCharatersAction
-    }
 
   },
   actions: {
@@ -151,7 +145,7 @@ export default new Vuex.Store({
       }
     },
     async GET_INFOSTARSHIPS({ commit }, item) {
-      const response = await fetch(item);
+      const response = await fetch(item.url);
       const infoShips = await response.json();
       commit('setInfoShips', infoShips)
     },
@@ -204,36 +198,27 @@ export default new Vuex.Store({
     },
 
     async GET_INFOCHARACTERS({ commit }, item) {
-      const response = fetch(item)
+      const response = fetch(item.url)
       const infoCharaters = await (await response).json();
       commit('setInfoCharacters', infoCharaters)
 
     },
     async GET_INFOPLANET({ commit }, item) {
-      const response = fetch(item)
+      const response = fetch(item.url)
       const infoPlanets = await (await response).json();
       commit('setInfoPlanets', infoPlanets)
     },
     async GET_INFOSPECIES({ commit }, item) {
-      const response = fetch(item)
+      const response = fetch(item.url)
       const infoSpecies = await (await response).json();
       commit('setInfoSpecies', infoSpecies)
 
     },
     async GET_INFOVEHICLES({ commit }, item) {
-      const response = fetch(item)
+      const response = fetch(item.url)
       const infoVehicles = await (await response).json();
       commit('setInfoVehicles', infoVehicles)
     },
-    async GET_RELATEDCHARACTERS({ commit }, item) {
-      console.log(item)
-      for (let i = 0; i < item.length; i++) {
-        const response = fetch(item.properties.characters)
-        const infoRelatedCharaters = await (await response).json();
-        console.log('uuuuuuuuuuuuuuuaaaaaaaaaaaaaa')
-      commit('setinfoRelatedCharaters', infoRelatedCharaters)
-    }
-    }
   },
   modules: {
   }

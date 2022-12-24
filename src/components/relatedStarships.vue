@@ -1,15 +1,17 @@
 <template>
     <div class="box">
         <p>Related starships</p>
-        <div v-for="(item, i) in infoFilm.properties.starships" :key="i">
-            <div class="card">
-                <div class="card-image">
-                    <!-- <figure class="image">
-                                        <img :src="require(`@/assets/characters/${item.uid}.jpg`)" alt="image film">
-                                    </figure> -->
-                    <a class="nav-link" @click="setInfoStarships(item),showImageShip(item)">
-                        <p style="color:gray" class="title is-size-5"> {{ item }}</p>
-                    </a>
+        <div class="columns is-multiline is-centered ">
+        <div v-for="(item, i) in starships" :key="i">
+                <div class="card carta">
+                    <div class="card-image">
+                        <figure class="image">
+                                        <img :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`" alt="image film">
+                                    </figure>
+                        <a class="nav-link" @click="setInfoStarships(item), showImageShip(item)">
+                            <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,14 +21,29 @@
 export default {
     name: 'relatedStarships',
     props: ['infoFilm'],
+    data() {
+        return {
+            starships: []
+        }
+    },
+    mounted() {
+        this.getStarships()
+    },
     methods: {
-        setInfoStarships(item){
+        setInfoStarships(item) {
             this.$router.push('/infoStarShip')
             this.$store.dispatch('GET_INFOSTARSHIPS', item)
         },
-        showImageShip(item){
+        showImageShip(item) {
             this.$store.state.numImg = item.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGESHIPS", item)
+        },
+        async getStarships() {
+            for (let i = 0; i < this.infoFilm.properties.starships.length; i++) {
+                const response = fetch(this.infoFilm.properties.starships[i])
+                const infoStarShip = await (await response).json();
+                this.starships.push(infoStarShip.result.properties)
+            }
         }
     }
 }
