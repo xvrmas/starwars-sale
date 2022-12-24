@@ -228,7 +228,7 @@ export default new Vuex.Store({
     async GET_RELATEDCHARACTERS({ commit }, item) {
       console.log(item)
       for (let i = 0; i < item.length; i++) {
-        const response = fetch(item.characters)
+        const response = fetch(item.properties.characters)
         const infoRelatedCharaters = await (await response).json();
         console.log('uuuuuuuuuuuuuuuaaaaaaaaaaaaaa')
       commit('setinfoRelatedCharaters', infoRelatedCharaters)
