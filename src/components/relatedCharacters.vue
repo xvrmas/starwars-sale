@@ -59,7 +59,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .carta {
     padding: 0px;
     width: 15vh;

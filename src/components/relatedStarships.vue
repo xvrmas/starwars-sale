@@ -54,3 +54,17 @@ export default {
     }
 }
 </script>
+<style scoped>
+.carta {
+    padding: 0px;
+    width: 15vh;
+    height: 20vh;
+    margin: 5px;
+    border-radius: 5%;
+
+}
+
+.titol {
+    margin-bottom: 20px;
+}
+</style>
