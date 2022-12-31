@@ -2,16 +2,17 @@
     <div class="border">
         <div>
             <div class="columns is-multiline is-centered is-mobile">
-                <div v-for="(item, i) in getFilms.result" :key="i">
+                <div v-for="(item, i) in getFilms.results" :key="i">
                     <div class="card">
                         <div class="card-image">
-                            <figure class="image" >
-                                <img :src="require(`@/assets/portada/${item.uid}.jpg`)" alt="image film">
+                            <figure class="image">
+                                <img :src="require(`@/assets/portada/${item.url.split(/\D/g).join('')}.jpg`)"
+                                    alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
                                 <p style="color:gray" class="title is-size-5">{{
-                                        item.properties.title
-                                }}</p>
+        item.title
+                                    }}</p>
                             </a>
                         </div>
                     </div>
@@ -34,7 +35,7 @@ export default {
             this.$router.push('/infoFilms')
         },
         showImageFilm: function (item) {
-            this.$store.state.numImg = item.properties.url.split(/\D/g).join('')
+            this.$store.state.numImg = item.results.url.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGEFILM", item)
         },
     }
@@ -49,10 +50,12 @@ export default {
     margin: 20px;
 
 }
-.title{
+
+.title {
     margin-top: 20px;
 }
-img{
+
+img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }

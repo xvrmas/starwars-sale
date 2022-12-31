@@ -49,7 +49,7 @@ export default {
         },
         showImageShip: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
-            return this.$store.dispatch("GET_IMAGESHIPS", item)
+            this.$store.dispatch("GET_IMAGESHIPS", item)
         },
 
     },
@@ -73,13 +73,16 @@ export default {
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }
-.contenidor{
+
+.contenidor {
     background-color: black;
 }
-.title{
+
+.title {
     margin-top: 20px;
 }
-img{
+
+img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }

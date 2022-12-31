@@ -150,7 +150,7 @@ export default new Vuex.Store({
       commit('setInfoShips', infoShips)
     },
     async GET_FILMS({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/films/`);
+      const response = await fetch(`https://swapi.dev/api/films/`);
       const films = await response.json();
       commit('setFilms', films)
     },

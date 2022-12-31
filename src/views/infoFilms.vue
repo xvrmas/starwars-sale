@@ -7,11 +7,11 @@
                 </div>
                 <div class="column has-text-left is-half mt-3">
                     <div class="box">
-                        <p><strong>Title: </strong> {{ infoFilm.properties.title }}</p>
-                        <p><strong>Director: </strong> {{ infoFilm.properties.director }}</p>
-                        <p><strong>Producer(s): </strong>{{ infoFilm.properties.producer }}</p>
-                        <p><strong>Release date: </strong>{{ infoFilm.properties.release_date }}</p>
-                        <p><strong>Synopsis: </strong>{{ infoFilm.properties.opening_crawl }}</p>
+                        <p><strong>Title: </strong> {{ infoFilm.results.title }}</p>
+                        <p><strong>Director: </strong> {{ infoFilm.results.director }}</p>
+                        <p><strong>Producer(s): </strong>{{ infoFilm.results.producer }}</p>
+                        <p><strong>Release date: </strong>{{ infoFilm.results.release_date }}</p>
+                        <p><strong>Synopsis: </strong>{{ infoFilm.results.opening_crawl }}</p>
                     </div>
                     <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
