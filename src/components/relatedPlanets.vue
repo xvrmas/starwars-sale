@@ -34,7 +34,6 @@ export default {
         setInfo(item) {
             this.$router.push('/infoPlanets')
             this.$store.dispatch('GET_INFOPLANET', item)
-            console.log(item)
         },
         async getPlanetes() {
             for (let i = 0; i < this.infoFilm.planets.length; i++) {

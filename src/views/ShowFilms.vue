@@ -36,7 +36,6 @@ export default {
         },
         showImageFilm: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
-            console.log('item-->',this.$store.state.numImg)
             return this.$store.dispatch("GET_IMAGEFILM")
         },
     }

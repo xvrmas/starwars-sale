@@ -156,7 +156,7 @@ export default new Vuex.Store({
     },
 
     async GET_PEOPLE({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/people?page=1&limit=82`);
+      const response = await fetch(`https://swapi.dev/api/people`);
       const people = await response.json();
       commit('setPeople', people)
     },
