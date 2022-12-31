@@ -36,10 +36,10 @@ export default {
             this.$router.push('/infoVehicles')
         },
         async getVehicles() {
-            for (let i = 0; i < this.infoFilm.properties.vehicles.length; i++) {
-                const response = fetch(this.infoFilm.properties.vehicles[i])
+            for (let i = 0; i < this.infoFilm.vehicles.length; i++) {
+                const response = fetch(this.infoFilm.vehicles[i])
                 const infoVehicles = await (await response).json();
-                this.vehicles.push(infoVehicles.result.properties)
+                this.vehicles.push(infoVehicles)
             }
         }
     }

@@ -41,10 +41,10 @@ export default {
             return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
         async getStarships() {
-            for (let i = 0; i < this.infoFilm.properties.starships.length; i++) {
-                const response = fetch(this.infoFilm.properties.starships[i])
+            for (let i = 0; i < this.infoFilm.starships.length; i++) {
+                const response = fetch(this.infoFilm.starships[i])
                 const infoStarShip = await (await response).json();
-                this.starships.push(infoStarShip.result.properties)
+                this.starships.push(infoStarShip)
             }
         },
         showImageShip: function (item) {

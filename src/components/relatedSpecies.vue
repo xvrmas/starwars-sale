@@ -36,10 +36,10 @@ export default {
             this.$store.dispatch('GET_INFOSPECIES', item)
         },
         async getSpecies() {
-            for (let i = 0; i < this.infoFilm.properties.species.length; i++) {
-                const response = fetch(this.infoFilm.properties.species[i])
+            for (let i = 0; i < this.infoFilm.species.length; i++) {
+                const response = fetch(this.infoFilm.species[i])
                 const infoSpecies = await (await response).json();
-                this.species.push(infoSpecies.result.properties)
+                this.species.push(infoSpecies)
             }
         }
     }

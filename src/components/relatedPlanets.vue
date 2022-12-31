@@ -37,10 +37,10 @@ export default {
             console.log(item)
         },
         async getPlanetes() {
-            for (let i = 0; i < this.infoFilm.properties.planets.length; i++) {
-                const response = fetch(this.infoFilm.properties.planets[i])
+            for (let i = 0; i < this.infoFilm.planets.length; i++) {
+                const response = fetch(this.infoFilm.planets[i])
                 const infoPlanetes = await (await response).json();
-                this.planetes.push(infoPlanetes.result.properties)
+                this.planetes.push(infoPlanetes)
             }
         }
     }
