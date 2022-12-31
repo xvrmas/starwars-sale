@@ -49,10 +49,10 @@ export default {
             console.log(item)
         },
         async getcharacters() {
-            for (let i = 0; i < this.infoFilm.properties.characters.length; i++) {
-                const response = fetch(this.infoFilm.properties.characters[i])
+            for (let i = 0; i < this.infoFilm.characters.length; i++) {
+                const response = fetch(this.infoFilm.characters[i])
                 const infoCharaters = await (await response).json();
-                this.personatges.push(infoCharaters.result.properties)
+                this.personatges.push(infoCharaters)
             }
         },
 
