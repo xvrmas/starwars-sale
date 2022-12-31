@@ -35,8 +35,9 @@ export default {
             this.$router.push('/infoFilms')
         },
         showImageFilm: function (item) {
-            this.$store.state.numImg = item.results.url.split(/\D/g).join('')
-            return this.$store.dispatch("GET_IMAGEFILM", item)
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
+            console.log('item-->',this.$store.state.numImg)
+            return this.$store.dispatch("GET_IMAGEFILM")
         },
     }
 }
