@@ -32,11 +32,7 @@ export default {
     computed: {
         ...mapGetters(['getInfoPlanets'])
     },
-    data() {
-        return {
-            uid: '0'
-        }
-    }
+    
 }
 </script>
 <style>

@@ -36,11 +36,7 @@ export default {
     computed: {
         ...mapGetters(['getInfoSpecies'])
     },
-    data() {
-        return {
-            uid: '0'
-        }
-    }
+   
 }
 </script>
 <style>

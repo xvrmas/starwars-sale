@@ -33,8 +33,8 @@ export default {
     },
     methods: {
         setInfoStarships(item) {
-            this.$router.push('/infoStarShip')
             this.$store.dispatch('GET_INFOSTARSHIPS', item)
+            this.$router.push('/infoStarShip')
         },
         showImageShip(item) {
             this.$store.state.numImg = item.split(/\D/g).join('')

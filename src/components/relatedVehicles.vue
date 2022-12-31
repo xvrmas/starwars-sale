@@ -32,8 +32,8 @@ export default {
     },
     methods: {
         setInfovehicles(item) {
-            this.$router.push('/infoVehicles')
             this.$store.dispatch('GET_INFOVEHICLES', item)
+            this.$router.push('/infoVehicles')
         },
         async getVehicles() {
             for (let i = 0; i < this.infoFilm.properties.vehicles.length; i++) {
