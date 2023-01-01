@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <p class="titol is-size-5 is-bold">Related Characters</p>
+        <p class="titol is-size-5  is-bold">Related Characters</p>
         <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in personatges" :key="i">
                 <div class="carta">
@@ -10,14 +10,14 @@
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
+                            <p class="title has-text-grey is-size-6"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</template>
+</template>1
 
 <script>
 export default {
@@ -58,17 +58,29 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style>
+.box {
+    padding: 20px;
+    background-color: rgb(45, 45, 45);
+    margin: 1px;
+    border-radius: 10px;
+    text-align: center;
+}
+img{
+    border-radius: 10px;
+}
 .carta {
-    padding: 0px;
+    padding: 0;
     width: 15vh;
     height: 28vh;
-    margin: 5px;
+    margin: 8px;
     border-radius: 5%;
 
 }
 
 .titol {
     margin-bottom: 20px;
+    color: rgb(174, 171, 171);
+
 }
 </style>

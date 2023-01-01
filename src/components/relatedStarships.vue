@@ -12,7 +12,7 @@
 
                     </div>
                     <a class="nav-link" @click="setInfoStarships(item), showImageShip(item)">
-                        <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
+                        <p class="title has-text-grey is-size-6"> {{ item.name }}</p>
                     </a>
                 </div>
             </div>
@@ -54,17 +54,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-.carta {
-    padding: 0px;
-    width: 15vh;
-    height: 20vh;
-    margin: 5px;
-    border-radius: 5%;
-
-}
-
-.titol {
-    margin-bottom: 20px;
-}
-</style>

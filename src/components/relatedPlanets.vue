@@ -9,7 +9,7 @@
                                         <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)" alt="image film">
                                     </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p style="color:gray" class="title is-size-6"> {{ item.name }}</p>
+                            <p  class="title has-text-grey is-size-6"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
@@ -46,17 +46,3 @@ export default {
 }
 
 </script>
-<style scoped>
-.carta {
-    padding: 0px;
-    width: 15vh;
-    height: 28vh;
-    margin: 5px;
-    border-radius: 5%;
-
-}
-
-.titol {
-    margin-bottom: 20px;
-}
-</style>

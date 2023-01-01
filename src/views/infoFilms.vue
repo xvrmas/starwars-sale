@@ -44,6 +44,12 @@ export default {
 }
 </script>
 <style scoped>
+p{
+    color:rgb(133, 131, 131);
+}
+strong{
+    color:rgb(174, 171, 171);
+}
 .caixa {
     background-color: black;
 }
