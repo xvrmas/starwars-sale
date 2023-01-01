@@ -200,6 +200,7 @@ export default new Vuex.Store({
     async GET_INFOCHARACTERS({ commit }, item) {
       const response = fetch(item.url)
       const infoCharaters = await (await response).json();
+      console.log('info characters-->', infoCharaters)
       commit('setInfoCharacters', infoCharaters)
 
     },
