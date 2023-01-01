@@ -200,13 +200,14 @@ export default new Vuex.Store({
     async GET_INFOCHARACTERS({ commit }, item) {
       const response = fetch(item.url)
       const infoCharaters = await (await response).json();
-      console.log('info characters-->', infoCharaters)
       commit('setInfoCharacters', infoCharaters)
 
     },
     async GET_INFOPLANET({ commit }, item) {
       const response = fetch(item.url)
       const infoPlanets = await (await response).json();
+      console.log('get info planets-->', infoPlanets)
+
       commit('setInfoPlanets', infoPlanets)
     },
     async GET_INFOSPECIES({ commit }, item) {
