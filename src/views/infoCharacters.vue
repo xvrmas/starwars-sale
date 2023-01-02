@@ -45,4 +45,10 @@ export default {
 .caixa {
     background-color: black;
 }
+strong{
+    color:rgb(174, 171, 171);
+}
+p{
+    color:rgb(133, 131, 131);
+}
 </style>
