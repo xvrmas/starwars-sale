@@ -46,6 +46,8 @@ export default {
         setInfo(item) {
             this.$router.push('/infoCharacters')
             this.$store.dispatch('GET_INFOCHARACTERS', item)
+            this.$store.dispatch('GET_INFOVEHICLES', item)
+            console.log('relate characters set info-->',item)
         },
         async getcharacters() {
             for (let i = 0; i < this.infoFilm.characters.length; i++) {

@@ -11,32 +11,42 @@
                         <p><strong>Name: </strong> {{ getInfoCharacters.name }}</p>
                         <p><strong>Gender: </strong>{{ getInfoCharacters.gender }}</p>
                         <p><strong>Birthday: </strong> {{ getInfoCharacters.birth_year
-                        }}</p>
+}}</p>
                         <p><strong>Eye color: </strong>{{ getInfoCharacters.eye_color
-                        }}</p>
+}}</p>
                         <p><strong>Skin color: </strong>{{ getInfoCharacters.skin_color
-                        }}</p>
+}}</p>
                         <p><strong>Hair color: </strong>{{ getInfoCharacters.hair_color
-                        }}</p>
+}}</p>
                         <p><strong>Height: </strong>{{ getInfoCharacters.height
-                        }} cm.</p>
+}} cm.</p>
                         <p><strong>Mass: </strong>{{ getInfoCharacters.mass
-                        }} Kgr.</p>
+}} Kgr.</p>
 
                     </div>
-                  
+                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
+                    <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
+                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>
+                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
+import relatedPlanets from '@/components/relatedPlanets.vue';
+import relatedSpecies from '@/components/relatedSpecies.vue';
+import relatedStarships from '@/components/relatedStarships.vue';
+import relatedvehicles from '@/components/relatedVehicles.vue';
 export default {
     name: 'infoCharacters',
+    components: { relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles },
+    props: ['infoFilm'],
     computed: {
-        ...mapGetters(['getInfoCharacters'])
+        ...mapGetters(['getInfoCharacters']),
+        ...mapState(['infoFilm'])
+
     },
 }
 </script>
@@ -45,10 +55,12 @@ export default {
 .caixa {
     background-color: black;
 }
-strong{
-    color:rgb(174, 171, 171);
+
+strong {
+    color: rgb(174, 171, 171);
 }
-p{
-    color:rgb(133, 131, 131);
+
+p {
+    color: rgb(133, 131, 131);
 }
 </style>

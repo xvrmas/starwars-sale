@@ -37,7 +37,7 @@ export default {
     props: ['infoFilm'],
     computed: {
         ...mapState(['infoFilm']),
-        ...mapGetters(['getImageFilm'])
+        ...mapGetters(['getImageFilm','getInfoVehicles'])
     },
 
 
