@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <p class="titol is-size-5 is-bold">Related planets</p>
+        <p class="titol is-size-4 is-bold">Related planets</p>
         <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in planetes" :key="i">
                 <div class="carta">
