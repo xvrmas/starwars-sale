@@ -24,10 +24,11 @@
 }} Kgr.</p>
 
                     </div>
-                    <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
+                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
+                    <!-- <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
                     <relatedStarships :infoFilm="infoFilm"></relatedStarships>
-                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
+                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles> -->
                 </div>
             </div>
         </div>
@@ -35,17 +36,18 @@
 </template>
 <script>
 import { mapGetters, mapState } from 'vuex'
+import relatedFilms from '@/components/relatedFilms.vue'
 import relatedPlanets from '@/components/relatedPlanets.vue';
 import relatedSpecies from '@/components/relatedSpecies.vue';
 import relatedStarships from '@/components/relatedStarships.vue';
 import relatedvehicles from '@/components/relatedVehicles.vue';
 export default {
     name: 'infoCharacters',
-    components: { relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles },
+    components: { relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles, relatedFilms },
     props: ['infoFilm'],
     computed: {
         ...mapGetters(['getInfoCharacters']),
-        ...mapState(['infoFilm'])
+        ...mapState(['infoFilm','arrayRelatedFilms'])
 
     },
 }

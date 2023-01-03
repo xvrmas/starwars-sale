@@ -18,6 +18,7 @@ export default new Vuex.Store({
     infoPlanets: [],
     infoSpecies: [],
     infoVehicles: [],
+    arrayRelatedFilms:[],
     page: 1,
     condition: false,
     numImg: 1,

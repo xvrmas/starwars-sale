@@ -17,7 +17,7 @@
                         <p><strong>Terrain: </strong> {{ getInfoPlanets.terrain }}</p>
                         <p><strong>Surface water: </strong> {{ getInfoPlanets.surface_water }}</p>
                     </div>
-                    
+                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>           
                 </div>
             </div>
 
@@ -26,11 +26,15 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters,mapState } from 'vuex'
+import relatedFilms from '@/components/relatedFilms.vue';
 export default {
     name: 'infoPlanets',
+    components:{relatedFilms},
     computed: {
-        ...mapGetters(['getInfoPlanets'])
+        ...mapGetters(['getInfoPlanets']),
+        ...mapState(['arrayRelatedFilms'])
+
     },
     
 }
@@ -38,5 +42,12 @@ export default {
 <style>
 .caixa {
     background-color: black;
+}
+strong {
+    color: rgb(174, 171, 171);
+}
+
+p {
+    color: rgb(133, 131, 131);
 }
 </style>

@@ -23,9 +23,6 @@
 <script>
 export default {
     name: 'relatedCharacters',
-    props: ['infoFilm'],
-
-
     props: {
         infoFilm: {
             type: Object
@@ -46,6 +43,7 @@ export default {
     methods: {
         setInfo(item) {
             this.$router.push('/infoCharacters')
+            this.$store.state.arrayRelatedFilms = item
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
         async getcharacters() {
