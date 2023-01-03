@@ -24,8 +24,8 @@
 }} Kgr.</p>
 
                     </div>
-                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
                     <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
+                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
                     <relatedStarships :infoFilm="infoFilm"></relatedStarships>
                     <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
                 </div>
