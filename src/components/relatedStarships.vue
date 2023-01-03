@@ -6,7 +6,7 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
+                            <img class="imatge" :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
                                 alt="image film">
                         </figure>
 
@@ -54,3 +54,13 @@ export default {
     }
 }
 </script>
+<style scoped>
+.carta {
+    padding: 0;
+    width: 20vh;
+    height: auto;
+    margin: 8px;
+    border-radius: 5%;
+
+}
+</style>

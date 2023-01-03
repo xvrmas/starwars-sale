@@ -6,7 +6,7 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img
+                            <img class="imatge"
                                 :src="(`https://starwars-visualguide.com/assets/img/species/${item.url.split(/\D/g).join('')}.jpg`)">
                         </figure>
                         <a class="nav-link" @click="setInfoSpecies(item)">

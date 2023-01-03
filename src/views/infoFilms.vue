@@ -14,10 +14,11 @@
                         <p><strong>Synopsis: </strong>{{ infoFilm.opening_crawl }}</p>
                     </div>
                     <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
-                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
                     <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
+                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
                     <relatedStarships :infoFilm="infoFilm"></relatedStarships>
                     <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
+
                 </div>
             </div>
         </div>

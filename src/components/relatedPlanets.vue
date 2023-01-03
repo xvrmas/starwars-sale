@@ -5,7 +5,7 @@
             <div v-for="(item, i) in planetes" :key="i">
                 <div class="carta">
                     <div >
-                        <figure class="image">
+                        <figure class="image ">
                                         <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)" alt="image film">
                                     </figure>
                         <a class="nav-link" @click="setInfo(item)">
@@ -46,3 +46,14 @@ export default {
 }
 
 </script>
+<style scoped>
+img{
+    border:solid rgb(53, 53, 53);
+    height:15vh;
+    width: auto;
+}
+.carta{
+    height: 22vh;
+}
+
+</style>

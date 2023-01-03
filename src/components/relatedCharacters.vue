@@ -6,7 +6,8 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img :src="require(`@/assets/characters/${item.url.split(/\D/g).join('')}.jpg`)"
+                            <img class="imatge"
+                                :src="require(`@/assets/characters/${item.url.split(/\D/g).join('')}.jpg`)"
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfo(item)">
@@ -66,9 +67,15 @@ export default {
     border-radius: 10px;
     text-align: center;
 }
-img{
+
+img {
     border-radius: 10px;
 }
+
+.imatge {
+    border: solid rgb(53, 53, 53) ;
+}
+
 .carta {
     padding: 0;
     width: 15vh;
@@ -79,7 +86,8 @@ img{
 }
 
 .titol {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: solid rgb(191, 147, 0) 2px;
     color: rgb(174, 171, 171);
 
 }
