@@ -10,7 +10,7 @@
                                 :src="require(`@/assets/portada/${item.url.split(/\D/g).join('')}.jpg`)"
                                 alt="image film">
                         </figure>
-                        <a class="nav-link" @click="setInfo(item)">
+                        <a class="nav-link" @click="setInfo(item), showImageFilm(item)">
                             <p class="title has-text-grey is-size-6"> {{ item.title }}</p>
                         </a>
                     </div>
@@ -41,14 +41,17 @@ export default {
 
     methods: {
         setInfo(item) {
+            this.$store.state.infoFilm = item,
             this.$router.push('/infoFilms')
-            this.$store.dispatch('GET_INFOFILMS', item)
+        },
+        showImageFilm: function (item) {
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
+            return this.$store.dispatch("GET_IMAGEFILM")
         },
         async getFilms() {
             for (let i = 0; i < this.arrayRelatedFilms.films.length; i++) {
                 const response = fetch(this.arrayRelatedFilms.films[i])
                 const filming = await (await response).json();
-                console.log('related films',filming)
                 this.filmRelated.push(filming)
 
             }

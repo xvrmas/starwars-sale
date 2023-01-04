@@ -34,23 +34,29 @@ import relatedStarships from '@/components/relatedStarships.vue';
 import relatedvehicles from '@/components/relatedVehicles.vue'
 export default {
     name: 'infoFilms',
-    components: { relatedCharacters, relatedPlanets, relatedSpecies, relatedStarships ,relatedvehicles},
-    props: ['infoFilm'],
+    components: { relatedCharacters, relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles },
+    props: {
+        infoFilm: {
+            type: Object
+        }
+    },
     computed: {
         ...mapState(['infoFilm']),
-        ...mapGetters(['getImageFilm','getInfoVehicles'])
+        ...mapGetters(['getImageFilm', 'getInfoVehicles'])
     },
 
 
 }
 </script>
 <style scoped>
-p{
-    color:rgb(133, 131, 131);
+p {
+    color: rgb(133, 131, 131);
 }
-strong{
-    color:rgb(174, 171, 171);
+
+strong {
+    color: rgb(174, 171, 171);
 }
+
 .caixa {
     background-color: black;
 }
