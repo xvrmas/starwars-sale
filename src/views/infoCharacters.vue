@@ -10,25 +10,31 @@
                     <div class="box">
                         <p><strong>Name: </strong> {{ getInfoCharacters.name }}</p>
                         <p><strong>Gender: </strong>{{ getInfoCharacters.gender }}</p>
-                        <p><strong>Birthday: </strong> {{ getInfoCharacters.birth_year
-}}</p>
-                        <p><strong>Eye color: </strong>{{ getInfoCharacters.eye_color
-}}</p>
-                        <p><strong>Skin color: </strong>{{ getInfoCharacters.skin_color
-}}</p>
-                        <p><strong>Hair color: </strong>{{ getInfoCharacters.hair_color
-}}</p>
-                        <p><strong>Height: </strong>{{ getInfoCharacters.height
-}} cm.</p>
-                        <p><strong>Mass: </strong>{{ getInfoCharacters.mass
-}} Kgr.</p>
+                        <p><strong>Birthday: </strong> {{
+                            getInfoCharacters.birth_year
+                        }}</p>
+                        <p><strong>Eye color: </strong>{{
+                            getInfoCharacters.eye_color
+                        }}</p>
+                        <p><strong>Skin color: </strong>{{
+                            getInfoCharacters.skin_color
+                        }}</p>
+                        <p><strong>Hair color: </strong>{{
+                            getInfoCharacters.hair_color
+                        }}</p>
+                        <p><strong>Height: </strong>{{
+                            getInfoCharacters.height
+                        }} cm.</p>
+                        <p><strong>Mass: </strong>{{
+                            getInfoCharacters.mass
+                        }} Kgr.</p>
 
                     </div>
-                    <relatedFilms v-if="condition" :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
+                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
                     <!-- <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
-                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
-                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>-->
-                    <relatedvehicles v-if="conditionVehicles" :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles> 
+                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>-->
+                    <relatedStarships :arrayRelatedSpaceships="arrayRelatedSpaceships"></relatedStarships>
+                    <relatedvehicles :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles>
                 </div>
             </div>
         </div>
@@ -47,7 +53,7 @@ export default {
     props: ['infoFilm'],
     computed: {
         ...mapGetters(['getInfoCharacters']),
-        ...mapState(['infoFilm','arrayRelatedFilms','condition','conditionVehicles','arrayRelatedVehicles'])
+        ...mapState(['infoFilm', 'arrayRelatedFilms', 'arrayRelatedSpaceships',  'arrayRelatedVehicles'])
 
     },
 }

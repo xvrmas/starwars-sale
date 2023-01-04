@@ -45,6 +45,8 @@ export default {
             this.$router.push('/infoCharacters')
             this.$store.state.arrayRelatedFilms = item
             this.$store.state.arrayRelatedVehicles = item
+            this.$store.state.arrayRelatedSpaceships= item
+            console.log('related characters',  this.$store.state.arrayRelatedSpaceships.starships)
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
         async getcharacters() {

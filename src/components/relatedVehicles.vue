@@ -29,9 +29,7 @@ export default {
         }
 
     },
-    computed: {
-        ...mapState(['conditionVehicles'])
-    },
+   
     data() {
         return {
             vehicles: []
@@ -40,6 +38,7 @@ export default {
     mounted() {
         this.getVehicles()
     },
+   
     methods: {
         setInfovehicles(item) {
             this.$store.state.infoFilm = item
@@ -47,18 +46,17 @@ export default {
         },
         async getVehicles() {
             if (this.arrayRelatedVehicles.vehicles.length >= 1) {
-                this.conditionVehicles = true
+                console.log('related vehicles', this.arrayRelatedVehicles.vehicles)
                 for (let i = 0; i < this.arrayRelatedVehicles.vehicles.length; i++) {
                     const response = fetch(this.arrayRelatedVehicles.vehicles[i])
                     const infoVehicles = await (await response).json();
                     this.vehicles.push(infoVehicles)
                 }
-            } else {
-                this.$store.state.conditionVehicles = false
-
             }
+
         }
     }
+
 } 
 </script>
 

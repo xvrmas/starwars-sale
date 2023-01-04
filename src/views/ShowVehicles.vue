@@ -34,7 +34,6 @@ export default {
         getInfoVehicles(item) {
             this.$store.dispatch('GET_INFOVEHICLES', item.url)
             this.$router.push('/infoVehicles')
-            console.log('info vehicles',item.uid)
         }
     }
 

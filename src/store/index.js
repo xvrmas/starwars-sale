@@ -20,9 +20,8 @@ export default new Vuex.Store({
     infoVehicles: [],
     arrayRelatedFilms: [],
     arrayRelatedVehicles: [],
+    arrayRelatedSpaceships:[],
     page: 1,
-    condition: true,
-    conditionVehicles: true,
     numImg: 1,
     imageShips: '',
     imageFilm: ''

@@ -6,7 +6,8 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img class="imatge" :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
+                            <img class="imatge"
+                                :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
                                 alt="image film">
                         </figure>
 
@@ -20,9 +21,15 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
     name: 'relatedStarships',
-    props: ['infoFilm'],
+    props: {
+        arrayRelatedSpaceships: {
+            type: Object
+        }
+    },
+
     data() {
         return {
             starships: []
@@ -31,9 +38,10 @@ export default {
     mounted() {
         this.getStarships()
     },
+   
     methods: {
         setInfoStarships(item) {
-            this.$store.dispatch('GET_INFOSTARSHIPS', item)
+            this.$store.state.infoFilm = item
             this.$router.push('/infoStarShip')
         },
         showImageShip(item) {
@@ -41,10 +49,12 @@ export default {
             return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
         async getStarships() {
-            for (let i = 0; i < this.infoFilm.starships.length; i++) {
-                const response = fetch(this.infoFilm.starships[i])
-                const infoStarShip = await (await response).json();
-                this.starships.push(infoStarShip)
+            if (this.arrayRelatedSpaceships.starships.length >= 1) {
+                for (let i = 0; i < this.arrayRelatedSpaceships.starships.length; i++) {
+                    const response = fetch(this.arrayRelatedSpaceships.starships[i])
+                    const infoStarShip = await (await response).json();
+                    this.starships.push(infoStarShip)
+                }
             }
         },
         showImageShip: function (item) {

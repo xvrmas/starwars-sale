@@ -16,8 +16,9 @@
                     <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
                     <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
-                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>
-                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles>
+                    <relatedStarships :arrayRelatedSpaceships="arrayRelatedSpaceships"></relatedStarships>
+                    <relatedvehicles :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles>
+
 
                 </div>
             </div>
@@ -40,8 +41,16 @@ export default {
             type: Object
         }
     },
+    mounted() {
+        this.$store.state.arrayRelatedVehicles = this.infoFilm
+        this.$store.state.arrayRelatedSpaceships = this.infoFilm
+    },
+    destroyed() {
+        this.$store.state.arrayRelatedVehicles = []
+        this.$store.state.arrayRelatedSpaceships = []
+    },
     computed: {
-        ...mapState(['infoFilm']),
+        ...mapState(['infoFilm', 'arrayRelatedVehicles', 'arrayRelatedSpaceships']),
         ...mapGetters(['getImageFilm', 'getInfoVehicles'])
     },
 

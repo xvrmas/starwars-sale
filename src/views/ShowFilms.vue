@@ -32,6 +32,8 @@ export default {
     methods: {
         setInfoFilm(item) {
             this.$store.state.infoFilm = item
+            this.$store.state.arrayRelatedVehicles = item
+            this.$store.state.arrayRelatedSpaceships= item
             this.$router.push('/infoFilms')
         },
         showImageFilm: function (item) {
