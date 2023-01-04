@@ -6,7 +6,8 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img class="imatge" :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.url.split(/\D/g).join('')}.jpg`)"
+                            <img class="imatge"
+                                :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.url.split(/\D/g).join('')}.jpg`)"
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfovehicles(item)">
@@ -19,9 +20,18 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
     name: 'relatedVehicles',
-    props: ['infoFilm'],
+    props: {
+        arrayRelatedVehicles: {
+            type: Object
+        }
+
+    },
+    computed: {
+        ...mapState(['conditionVehicles'])
+    },
     data() {
         return {
             vehicles: []
@@ -32,18 +42,24 @@ export default {
     },
     methods: {
         setInfovehicles(item) {
-            this.$store.dispatch('GET_INFOVEHICLES', item)
+            this.$store.state.infoFilm = item
             this.$router.push('/infoVehicles')
         },
         async getVehicles() {
-            for (let i = 0; i < this.infoFilm.vehicles.length; i++) {
-                const response = fetch(this.infoFilm.vehicles[i])
-                const infoVehicles = await (await response).json();
-                this.vehicles.push(infoVehicles)
+            if (this.arrayRelatedVehicles.vehicles.length >= 1) {
+                this.conditionVehicles = true
+                for (let i = 0; i < this.arrayRelatedVehicles.vehicles.length; i++) {
+                    const response = fetch(this.arrayRelatedVehicles.vehicles[i])
+                    const infoVehicles = await (await response).json();
+                    this.vehicles.push(infoVehicles)
+                }
+            } else {
+                this.$store.state.conditionVehicles = false
+
             }
         }
     }
-}
+} 
 </script>
 
 <style scoped>

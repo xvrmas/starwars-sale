@@ -6,8 +6,7 @@
                 <div class="carta">
                     <div>
                         <figure class="image">
-                            <img class="imatge"
-                                :src="require(`@/assets/portada/${item.url.split(/\D/g).join('')}.jpg`)"
+                            <img class="imatge" :src="require(`@/assets/portada/${item.url.split(/\D/g).join('')}.jpg`)"
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfo(item), showImageFilm(item)">
@@ -21,18 +20,22 @@
 </template>1
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    name: 'relatedCharacters',
+    name: 'relatedFilms',
     props: {
         arrayRelatedFilms: {
             type: Object
         }
     },
-  data (){
-    return{
-        filmRelated:[]
-    }
-  },
+    computed: {
+        ...mapState(['condition'])
+    },
+    data() {
+        return {
+            filmRelated: []
+        }
+    },
 
     mounted() {
         this.getFilms()
@@ -42,17 +45,23 @@ export default {
     methods: {
         setInfo(item) {
             this.$store.state.infoFilm = item,
-            this.$router.push('/infoFilms')
+                this.$router.push('/infoFilms')
         },
         showImageFilm: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGEFILM")
         },
         async getFilms() {
-            for (let i = 0; i < this.arrayRelatedFilms.films.length; i++) {
-                const response = fetch(this.arrayRelatedFilms.films[i])
-                const filming = await (await response).json();
-                this.filmRelated.push(filming)
+            if (this.arrayRelatedFilms.films.length >= 1) {
+                this.condition = true
+                for (let i = 0; i < this.arrayRelatedFilms.films.length; i++) {
+                    const response = fetch(this.arrayRelatedFilms.films[i])
+                    const filming = await (await response).json();
+                    this.filmRelated.push(filming)
+
+                }
+            } else {
+                this.$store.state.condition = false
 
             }
         },

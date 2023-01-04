@@ -18,9 +18,11 @@ export default new Vuex.Store({
     infoPlanets: [],
     infoSpecies: [],
     infoVehicles: [],
-    arrayRelatedFilms:[],
+    arrayRelatedFilms: [],
+    arrayRelatedVehicles: [],
     page: 1,
-    condition: false,
+    condition: true,
+    conditionVehicles: true,
     numImg: 1,
     imageShips: '',
     imageFilm: ''
@@ -78,7 +80,7 @@ export default new Vuex.Store({
     getInfoVehicles(state) {
       return state.infoVehicles
     },
-  
+
 
   },
   mutations: {

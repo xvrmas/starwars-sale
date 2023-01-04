@@ -24,11 +24,11 @@
 }} Kgr.</p>
 
                     </div>
-                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
+                    <relatedFilms v-if="condition" :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
                     <!-- <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
-                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>
-                    <relatedvehicles :infoFilm="infoFilm"></relatedvehicles> -->
+                    <relatedStarships :infoFilm="infoFilm"></relatedStarships>-->
+                    <relatedvehicles v-if="conditionVehicles" :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles> 
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@ export default {
     props: ['infoFilm'],
     computed: {
         ...mapGetters(['getInfoCharacters']),
-        ...mapState(['infoFilm','arrayRelatedFilms'])
+        ...mapState(['infoFilm','arrayRelatedFilms','condition','conditionVehicles','arrayRelatedVehicles'])
 
     },
 }
