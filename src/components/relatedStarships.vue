@@ -29,7 +29,9 @@ export default {
             type: Object
         }
     },
-
+    computed: {
+        ...mapState(['infoFilm'])
+    },
     data() {
         return {
             starships: []
@@ -37,12 +39,16 @@ export default {
     },
     created() {
         this.getStarships()
+        console.log('created arrayRelatedSpaceships', this.arrayRelatedSpaceships)
     },
-   
+    destroyed() {
+        console.log('destroyed arrayRelatedSpaceships', this.arrayRelatedSpaceships)
+    },
     methods: {
         setInfoStarships(item) {
             this.$store.state.infoFilm = item
             this.$router.push('/infoStarShip')
+            this.$store.dispatch('GET_INFOSTARSHIPS', item)
         },
         showImageShip(item) {
             this.$store.state.numImg = item.split(/\D/g).join('')

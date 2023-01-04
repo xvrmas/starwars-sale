@@ -20,7 +20,6 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
 export default {
     name: 'relatedVehicles',
     props: {
@@ -38,15 +37,17 @@ export default {
     created() {
         this.getVehicles()
     },
+    
 
     methods: {
         setInfovehicles(item) {
             this.$store.state.infoFilm = item
             this.$router.push('/infoVehicles')
+            this.$store.dispatch('GET_INFOVEHICLES', item)
+
         },
         async getVehicles() {
             if (this.arrayRelatedVehicles.vehicles.length >= 1) {
-                console.log('related vehicles', this.arrayRelatedVehicles.vehicles)
                 for (let i = 0; i < this.arrayRelatedVehicles.vehicles.length; i++) {
                     const response = fetch(this.arrayRelatedVehicles.vehicles[i])
                     const infoVehicles = await (await response).json();

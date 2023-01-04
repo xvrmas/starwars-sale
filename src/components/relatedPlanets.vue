@@ -4,12 +4,13 @@
         <div class="columns is-multiline is-mobile is-centered ">
             <div v-for="(item, i) in planetes" :key="i">
                 <div class="carta">
-                    <div >
+                    <div>
                         <figure class="image ">
-                                        <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)" alt="image film">
-                                    </figure>
+                            <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)"
+                                alt="image film">
+                        </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p  class="title has-text-grey is-size-6"> {{ item.name }}</p>
+                            <p class="title has-text-grey is-size-6"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
@@ -29,6 +30,7 @@ export default {
     created() {
         this.getPlanetes()
     },
+   
 
     methods: {
         setInfo(item) {
@@ -47,13 +49,13 @@ export default {
 
 </script>
 <style scoped>
-img{
-    border:solid rgb(53, 53, 53);
-    height:15vh;
+img {
+    border: solid rgb(53, 53, 53);
+    height: 15vh;
     width: auto;
 }
-.carta{
+
+.carta {
     height: 22vh;
 }
-
 </style>
