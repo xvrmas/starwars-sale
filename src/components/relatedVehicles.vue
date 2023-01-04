@@ -29,16 +29,16 @@ export default {
         }
 
     },
-   
+
     data() {
         return {
             vehicles: []
         }
     },
-    mounted() {
+    created() {
         this.getVehicles()
     },
-   
+
     methods: {
         setInfovehicles(item) {
             this.$store.state.infoFilm = item

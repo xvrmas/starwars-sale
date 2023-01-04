@@ -35,7 +35,7 @@ export default {
             starships: []
         }
     },
-    mounted() {
+    created() {
         this.getStarships()
     },
    

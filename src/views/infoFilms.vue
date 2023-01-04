@@ -45,10 +45,7 @@ export default {
         this.$store.state.arrayRelatedVehicles = this.infoFilm
         this.$store.state.arrayRelatedSpaceships = this.infoFilm
     },
-    destroyed() {
-        this.$store.state.arrayRelatedVehicles = []
-        this.$store.state.arrayRelatedSpaceships = []
-    },
+    
     computed: {
         ...mapState(['infoFilm', 'arrayRelatedVehicles', 'arrayRelatedSpaceships']),
         ...mapGetters(['getImageFilm', 'getInfoVehicles'])

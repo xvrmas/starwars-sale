@@ -26,7 +26,7 @@ export default {
             planetes: []
         }
     },
-    mounted() {
+    created() {
         this.getPlanetes()
     },
 

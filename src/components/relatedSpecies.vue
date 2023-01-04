@@ -27,7 +27,7 @@ export default {
             species: []
         }
     },
-    mounted() {
+    created() {
         this.getSpecies()
     },
     methods: {
