@@ -43,9 +43,7 @@ export default {
     methods: {
         setInfo(item) {
             this.$router.push('/infoCharacters')
-            this.$store.state.arrayRelatedFilms = item
-            this.$store.state.arrayRelatedVehicles = item
-            this.$store.state.arrayRelatedSpaceships= item
+            this.$store.state.arrayRelatedItems = item
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
         async getcharacters() {

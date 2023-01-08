@@ -30,11 +30,11 @@
                         }} Kgr.</p>
 
                     </div>
-                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>
+                    <relatedFilms :arrayRelatedItems="arrayRelatedItems"></relatedFilms>
                     <!-- <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>-->
-                    <relatedStarships :arrayRelatedSpaceships="arrayRelatedSpaceships"></relatedStarships>
-                    <relatedvehicles :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles>
+                    <relatedStarships :arrayRelatedItems="arrayRelatedItems"></relatedStarships>
+                    <relatedvehicles :arrayRelatedItems="arrayRelatedItems"></relatedvehicles>
                 </div>
             </div>
         </div>
@@ -50,10 +50,9 @@ import relatedvehicles from '@/components/relatedVehicles.vue';
 export default {
     name: 'infoCharacters',
     components: { relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles, relatedFilms },
-    props: ['infoFilm'],
     computed: {
         ...mapGetters(['getInfoCharacters']),
-        ...mapState(['infoFilm', 'arrayRelatedFilms', 'arrayRelatedSpaceships',  'arrayRelatedVehicles'])
+        ...mapState(['arrayRelatedItems'])
 
     },
 }

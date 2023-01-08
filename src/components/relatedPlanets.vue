@@ -21,7 +21,11 @@
 <script>
 export default {
     name: 'relatedPlanets',
-    props: ['infoFilm'],
+    props: {
+        infoFilm: {
+            type: Object
+        }
+    },
     data() {
         return {
             planetes: []

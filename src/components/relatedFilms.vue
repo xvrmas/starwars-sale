@@ -2,7 +2,7 @@
     <div class="box">
         <p class="titol is-size-4  is-bold">Related Films</p>
         <div class="columns is-multiline is-mobile is-centered ">
-            <div v-for="(item, i) in filmRelated " :key="i">
+            <div v-for="(item, i) in films " :key="i">
                 <div class="carta">
                     <div>
                         <figure class="image">
@@ -29,15 +29,15 @@ export default {
         }
     },
     computed: {
-        ...mapState(['condition'])
+        ...mapState(['arrayRelatedItems'])
     },
     data() {
         return {
-            filmRelated: []
+            films: []
         }
     },
 
-    created() {
+   mounted() {
         this.getFilms()
     },
 
@@ -52,12 +52,12 @@ export default {
             return this.$store.dispatch("GET_IMAGEFILM")
         },
         async getFilms() {
-            if (this.arrayRelatedFilms.films.length >= 1) {
+            if (this.arrayRelatedItems.films.length >= 1) {
                 this.condition = true
-                for (let i = 0; i < this.arrayRelatedFilms.films.length; i++) {
-                    const response = fetch(this.arrayRelatedFilms.films[i])
+                for (let i = 0; i < this.arrayRelatedItems.films.length; i++) {
+                    const response = fetch(this.arrayRelatedItems.films[i])
                     const filming = await (await response).json();
-                    this.filmRelated.push(filming)
+                    this.films.push(filming)
 
                 }
             } else {

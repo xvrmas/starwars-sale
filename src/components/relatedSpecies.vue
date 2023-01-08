@@ -21,7 +21,11 @@
 <script>
 export default {
     name: 'relatedSpecies',
-    props: ['infoFilm'],
+    props: {
+        infoFilm: {
+            type: Object
+        }
+    },
     data() {
         return {
             species: []

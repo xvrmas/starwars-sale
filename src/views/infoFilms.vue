@@ -16,8 +16,8 @@
                     <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
                     <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
                     <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
-                    <relatedStarships :arrayRelatedSpaceships="arrayRelatedSpaceships"></relatedStarships>
-                    <relatedvehicles :arrayRelatedVehicles="arrayRelatedVehicles"></relatedvehicles>
+                    <relatedStarships :arrayRelatedItems="arrayRelatedItems"></relatedStarships>
+                    <relatedvehicles :arrayRelatedItems="arrayRelatedItems"></relatedvehicles>
                     <!-- <relatedStarships :infoFilm="infoFilm"></relatedStarships> -->
                     <!-- <relatedvehicles :infoFilm="infoFilm"></relatedvehicles> -->
 
@@ -44,18 +44,16 @@ export default {
         }
     },
     mounted() {
-        this.$store.state.arrayRelatedVehicles = this.infoFilm
-        this.$store.state.arrayRelatedSpaceships = this.infoFilm
+        this.$store.state.arrayRelatedItems = this.infoFilm
     },
     destroyed() {
-        this.infoFilm = this.$store.state.arrayRelatedVehicles
-        this.infoFilm = this.$store.state.arrayRelatedSpaceships
+        this.infoFilm = this.$store.state.arrayRelatedItems
 
     },
 
     computed: {
-        ...mapState(['infoFilm', 'arrayRelatedVehicles', 'arrayRelatedSpaceships']),
-        ...mapGetters(['getImageFilm', 'getInfoVehicles'])
+        ...mapState(['infoFilm',  'arrayRelatedItems']),
+        ...mapGetters(['getImageFilm'])
     },
 
 

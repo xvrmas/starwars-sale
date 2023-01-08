@@ -25,24 +25,28 @@ import { mapState } from 'vuex'
 export default {
     name: 'relatedStarships',
     props: {
-        arrayRelatedSpaceships: {
+        arrayRelatedItems: {
+            type: Object
+        },
+        infoFilm: {
             type: Object
         }
     },
     computed: {
-        ...mapState(['infoFilm'])
+        ...mapState(['infoFilm', 'arrayRelatedItems'])
     },
     data() {
         return {
             starships: []
         }
     },
-    created() {
+    mounted() {
         this.getStarships()
-        console.log('created arrayRelatedSpaceships', this.arrayRelatedSpaceships)
     },
     destroyed() {
-        console.log('destroyed arrayRelatedSpaceships', this.arrayRelatedSpaceships)
+       this.arrayRelatedItems,
+        console.log('destroied related starships info film',this.infoFilm)
+        console.log('destroied related starships array ships',this.arrayRelatedItems)
     },
     methods: {
         setInfoStarships(item) {
@@ -55,9 +59,9 @@ export default {
             return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
         async getStarships() {
-            if (this.arrayRelatedSpaceships.starships.length >= 1) {
-                for (let i = 0; i < this.arrayRelatedSpaceships.starships.length; i++) {
-                    const response = fetch(this.arrayRelatedSpaceships.starships[i])
+            if (this.arrayRelatedItems.starships.length >= 1) {
+                for (let i = 0; i < this.arrayRelatedItems.starships.length; i++) {
+                    const response = fetch(this.arrayRelatedItems.starships[i])
                     const infoStarShip = await (await response).json();
                     this.starships.push(infoStarShip)
                 }
