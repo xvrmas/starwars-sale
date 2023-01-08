@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="botons">
-            <a @click="showFilms"  href="#" class="boto_nav">Films</a>
+            <a @click="showFilms"  href="#" class="boto_nav">Home</a>
             <!-- <a @click="showPeople" href="#" class="boto_nav">Characters</a>
             <a @click="showPlanets" href="#" class="boto_nav">Planets</a>
             <a @click="showSpecies" href="#" class="boto_nav">Species</a>
