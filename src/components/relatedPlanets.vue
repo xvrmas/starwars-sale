@@ -19,12 +19,11 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'relatedPlanets',
-    props: {
-        infoFilm: {
-            type: Object
-        }
+    computed: {
+        ...mapGetters(['getInfoFilms'])
     },
     data() {
         return {
@@ -34,16 +33,16 @@ export default {
     created() {
         this.getPlanetes()
     },
-   
 
     methods: {
         setInfo(item) {
+
             this.$router.push('/infoPlanets')
             this.$store.dispatch('GET_INFOPLANET', item)
         },
         async getPlanetes() {
-            for (let i = 0; i < this.infoFilm.planets.length; i++) {
-                const response = fetch(this.infoFilm.planets[i])
+            for (let i = 0; i < this.getInfoFilms.planets.length; i++) {
+                const response = fetch(this.getInfoFilms.planets[i])
                 const infoPlanetes = await (await response).json();
                 this.planetes.push(infoPlanetes)
             }

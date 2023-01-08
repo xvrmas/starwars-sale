@@ -21,20 +21,18 @@
 </template>1
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'relatedCharacters',
-    props: {
-        infoFilm: {
-            type: Object
-        }
-    },
     data() {
         return {
             personatges: [],
             numImatge: ''
         }
     },
-
+    computed: {
+        ...mapGetters(['getInfoFilms'])
+    },
     created() {
         this.getcharacters()
     },
@@ -42,13 +40,13 @@ export default {
 
     methods: {
         setInfo(item) {
+            console.log('related characters',item)
             this.$router.push('/infoCharacters')
-            this.$store.state.arrayRelatedItems = item
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
         async getcharacters() {
-            for (let i = 0; i < this.infoFilm.characters.length; i++) {
-                const response = fetch(this.infoFilm.characters[i])
+            for (let i = 0; i < this.getInfoFilms.characters.length; i++) {
+                const response = fetch(this.getInfoFilms.characters[i])
                 const infoCharaters = await (await response).json();
                 this.personatges.push(infoCharaters)
             }
@@ -71,7 +69,7 @@ img {
 }
 
 .imatge {
-    border: solid rgb(53, 53, 53) ;
+    border: solid rgb(53, 53, 53);
 }
 
 .carta {

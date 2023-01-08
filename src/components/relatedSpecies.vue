@@ -19,17 +19,17 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'relatedSpecies',
-    props: {
-        infoFilm: {
-            type: Object
-        }
-    },
+  
     data() {
         return {
             species: []
         }
+    },
+    computed:{
+        ...mapGetters(['getInfoFilms'])
     },
     created() {
         this.getSpecies()
@@ -40,8 +40,8 @@ export default {
             this.$store.dispatch('GET_INFOSPECIES', item)
         },
         async getSpecies() {
-            for (let i = 0; i < this.infoFilm.species.length; i++) {
-                const response = fetch(this.infoFilm.species[i])
+            for (let i = 0; i < this.getInfoFilms.species.length; i++) {
+                const response = fetch(this.getInfoFilms.species[i])
                 const infoSpecies = await (await response).json();
                 this.species.push(infoSpecies)
             }

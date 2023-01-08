@@ -20,16 +20,11 @@
 </template>1
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
     name: 'relatedFilms',
-    props: {
-        arrayRelatedFilms: {
-            type: Object
-        }
-    },
     computed: {
-        ...mapState(['arrayRelatedItems'])
+        ...mapGetters(['getInfoFilms'])
     },
     data() {
         return {
@@ -44,18 +39,18 @@ export default {
 
     methods: {
         setInfo(item) {
-            this.$store.state.infoFilm = item,
-                this.$router.push('/infoFilms')
+            this.$router.push('/infoFilms')
+            this.$store.dispatch('GET_INFOFILMS', item)
+
         },
         showImageFilm: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGEFILM")
         },
         async getFilms() {
-            if (this.arrayRelatedItems.films.length >= 1) {
-                this.condition = true
-                for (let i = 0; i < this.arrayRelatedItems.films.length; i++) {
-                    const response = fetch(this.arrayRelatedItems.films[i])
+            if (this.getInfoFilms.films.length >= 1) {
+                for (let i = 0; i < this.getInfoFilms.films.length; i++) {
+                    const response = fetch(this.getInfoFilms.films[i])
                     const filming = await (await response).json();
                     this.films.push(filming)
 

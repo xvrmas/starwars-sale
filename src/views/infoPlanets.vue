@@ -17,7 +17,8 @@
                         <p><strong>Terrain: </strong> {{ getInfoPlanets.terrain }}</p>
                         <p><strong>Surface water: </strong> {{ getInfoPlanets.surface_water }}</p>
                     </div>
-                    <relatedFilms :arrayRelatedFilms="arrayRelatedFilms"></relatedFilms>           
+                    <relatedFilms ></relatedFilms>
+                             
                 </div>
             </div>
 
@@ -26,14 +27,13 @@
 </template>
 
 <script>
-import { mapGetters,mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 import relatedFilms from '@/components/relatedFilms.vue';
 export default {
     name: 'infoPlanets',
     components:{relatedFilms},
     computed: {
         ...mapGetters(['getInfoPlanets']),
-        ...mapState(['arrayRelatedFilms'])
 
     },
     

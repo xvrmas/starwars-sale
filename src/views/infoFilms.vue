@@ -13,15 +13,11 @@
                         <p><strong>Release date: </strong>{{ infoFilm.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.opening_crawl }}</p>
                     </div>
-                    <relatedCharacters :infoFilm="infoFilm"></relatedCharacters>
-                    <relatedSpecies :infoFilm="infoFilm"></relatedSpecies>
-                    <relatedPlanets :infoFilm="infoFilm"></relatedPlanets>
-                    <relatedStarships :arrayRelatedItems="arrayRelatedItems"></relatedStarships>
-                    <relatedvehicles :arrayRelatedItems="arrayRelatedItems"></relatedvehicles>
-                    <!-- <relatedStarships :infoFilm="infoFilm"></relatedStarships> -->
-                    <!-- <relatedvehicles :infoFilm="infoFilm"></relatedvehicles> -->
-
-
+                    <relatedCharacters ></relatedCharacters>
+                    <relatedSpecies ></relatedSpecies>
+                    <relatedPlanets></relatedPlanets>
+                    <relatedStarships ></relatedStarships>
+                    <relatedvehicles></relatedvehicles>
                 </div>
             </div>
         </div>
@@ -38,21 +34,8 @@ import relatedvehicles from '@/components/relatedVehicles.vue'
 export default {
     name: 'infoFilms',
     components: { relatedCharacters, relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles },
-    props: {
-        infoFilm: {
-            type: Object
-        }
-    },
-    mounted() {
-        this.$store.state.arrayRelatedItems = this.infoFilm
-    },
-    destroyed() {
-        this.infoFilm = this.$store.state.arrayRelatedItems
-
-    },
-
     computed: {
-        ...mapState(['infoFilm',  'arrayRelatedItems']),
+        ...mapState(['infoFilm']),
         ...mapGetters(['getImageFilm'])
     },
 
