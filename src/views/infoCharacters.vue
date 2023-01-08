@@ -30,11 +30,11 @@
                         }} Kgr.</p>
 
                     </div>
-                    <relatedFilms ></relatedFilms>
+                    <!-- <relatedFilms ></relatedFilms>
                     <relatedSpecies ></relatedSpecies>
                     <relatedPlanets></relatedPlanets>
                     <relatedStarships></relatedStarships>
-                    <relatedvehicles ></relatedvehicles>
+                    <relatedvehicles ></relatedvehicles> -->
                 </div>
             </div>
         </div>

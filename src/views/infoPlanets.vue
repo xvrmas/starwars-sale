@@ -17,7 +17,7 @@
                         <p><strong>Terrain: </strong> {{ getInfoPlanets.terrain }}</p>
                         <p><strong>Surface water: </strong> {{ getInfoPlanets.surface_water }}</p>
                     </div>
-                    <relatedFilms ></relatedFilms>
+                    <!-- <relatedFilms ></relatedFilms> -->
                              
                 </div>
             </div>
