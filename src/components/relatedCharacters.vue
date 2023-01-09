@@ -2,7 +2,7 @@
     <div class="box">
         <p class="titol is-size-4  is-bold">Related Characters</p>
         <div class="columns is-multiline is-mobile is-centered ">
-            <div v-for="(item, i) in personatges" :key="i">
+            <div v-for="(item, i) in getPersonatges" :key="i">
                 <div class="carta">
                     <div>
                         <figure class="image">
@@ -24,18 +24,10 @@
 import { mapGetters } from 'vuex'
 export default {
     name: 'relatedCharacters',
-    data() {
-        return {
-            personatges: [],
-            numImatge: ''
-        }
-    },
     computed: {
-        ...mapGetters(['getInfoFilms'])
+        ...mapGetters(['getPersonatges'])
     },
-    created() {
-        this.getcharacters()
-    },
+  
 
 
     methods: {
@@ -44,14 +36,6 @@ export default {
             this.$router.push('/infoCharacters')
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
-        async getcharacters() {
-            for (let i = 0; i < this.getInfoFilms.characters.length; i++) {
-                const response = fetch(this.getInfoFilms.characters[i])
-                const infoCharaters = await (await response).json();
-                this.personatges.push(infoCharaters)
-            }
-        },
-
     }
 }
 </script>

@@ -32,6 +32,7 @@ export default {
     methods: {
         setInfoFilm(item) {
             this.$store.state.infoFilm = item
+            this.$store.dispatch("GET_RELATEDCHARACTERS")
             this.$router.push('/infoFilms')
         },
         showImageFilm: function (item) {
