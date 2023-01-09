@@ -30,8 +30,8 @@ export default {
 
     methods: {
         setInfoShip(item) {
-            this.$store.dispatch("GET_INFOSTARSHIPS", item.url)
-            this.$router.push('infoStarShip')
+            this.$store.state.infoTechShip = item
+            this.$router.push('/infoStarShip')
         },
         increasePage() {
             this.$store.state.page++;

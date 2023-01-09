@@ -31,8 +31,8 @@ export default {
     },
     methods:{
         setInfoPlanets(item){
-            this.$router.push('infoPlanets')
-            this.$store.dispatch('GET_INFOPLANET', item.url)
+            this.$store.state.infoPlanets = item
+            this.$router.push('/infoPlanets')
         }
     }
 }

@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         getInfoVehicles(item) {
-            this.$store.dispatch('GET_INFOVEHICLES', item.url)
+            this.$store.state.infoVehicles = item
             this.$router.push('/infoVehicles')
         }
     }

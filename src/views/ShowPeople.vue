@@ -31,8 +31,7 @@ export default {
     },
     methods: {
         setInfoFilms(item) {
-            this.$store.dispatch('GET_INFOCHARACTERS', item.url)
-            console.log('set info film show people', item.url)
+            this.$store.state.infoCharacters = item
             this.$router.push('/infoCharacters')
         }
     }

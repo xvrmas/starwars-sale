@@ -31,8 +31,8 @@ export default {
     },
     methods:{
         setInfoSpecies(item){
-            this.$router.push('infoSpecies')
-            this.$store.dispatch('GET_INFOSPECIES', item.url)
+            this.$store.state.infoSpecies = item
+            this.$router.push('/infoSpecies')
         }
     }
 }
