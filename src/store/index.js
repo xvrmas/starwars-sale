@@ -127,7 +127,7 @@ export default new Vuex.Store({
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/starships/?page=2`);
+      const response = await fetch(`https://swapi.dev/api/starships/?${this.state.page}`);
       const ships = await response.json();
       commit('setShips', ships)
     },
