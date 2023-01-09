@@ -127,7 +127,7 @@ export default new Vuex.Store({
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/starships/?page=1&limit=36`);
+      const response = await fetch(`https://swapi.dev/api/starships/?page=2`);
       const ships = await response.json();
       commit('setShips', ships)
     },
@@ -156,24 +156,24 @@ export default new Vuex.Store({
     },
 
     async GET_PEOPLE({ commit }) {
-      const response = await fetch(`https://swapi.tech/api/people?page=2&limit=82`);
+      const response = await fetch(`https://swapi.dev/api/people?page=${this.state.page}`);
       const people = await response.json();
       commit('setPeople', people)
     },
 
     async GET_PLANETS({ commit }) {
-      const response = await fetch(`https://www.swapi.tech/api/planets?page=1&limit=60`);
+      const response = await fetch(`https://swapi.dev/api/planets/?page=${this.state.page}`);
       const planets = await response.json();
       commit('setPlanets', planets)
     },
     async GET_SPECIES({ commit }) {
-      const response = await fetch(`https://www.swapi.tech/api/species?page=1&limit=37`);
+      const response = await fetch(`https://swapi.dev/api/species/?page=${this.state.page}`);
       const species = await response.json();
       commit('setSpecies', species)
     },
 
     async GET_VEHICLES({ commit }) {
-      const response = await fetch(`https://www.swapi.tech/api/vehicles?page=1&limit=39`);
+      const response = await fetch(`https://swapi.dev/api/vehicles/?page=${this.state.page}`);
       const vehicles = await response.json();
       commit('setVehicles', vehicles)
     },

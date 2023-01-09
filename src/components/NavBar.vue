@@ -7,11 +7,11 @@
         </div>
         <div class="botons">
             <a @click="showFilms"  href="#" class="boto_nav">Home</a>
-            <!-- <a @click="showPeople" href="#" class="boto_nav">Characters</a>
+            <a @click="showPeople" href="#" class="boto_nav">Characters</a>
             <a @click="showPlanets" href="#" class="boto_nav">Planets</a>
             <a @click="showSpecies" href="#" class="boto_nav">Species</a>
             <a @click="starships" href="#" class="boto_nav">Starships</a>
-            <a @click="showVehicles" href="#" class="boto_nav">Vehicles</a> -->
+            <a @click="showVehicles" href="#" class="boto_nav">Vehicles</a>
         </div>
     </div>
 </template>

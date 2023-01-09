@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img :src="require(`@/assets/planets/${item.uid}.jpg`)"
+                                <img :src="require(`@/assets/planets/${item.url.split(/\D/g).join('')}.jpg`)"
                                     alt="image film">
                             </figure>
                             <a class="nav-link">

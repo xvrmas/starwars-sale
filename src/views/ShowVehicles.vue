@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`)"
+                                <img :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.url.split(/\D/g).join('')}.jpg`)"
                                     alt="image film">
                             </figure>
                             <a class="nav-link">
