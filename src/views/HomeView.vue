@@ -7,7 +7,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img :src="(`https://starwars-visualguide.com/assets/img/starships/${item.uid}.jpg`)"
+                                    <img :src="(`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`)"
                                         alt="image film">
                                 </figure>
                                 <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
