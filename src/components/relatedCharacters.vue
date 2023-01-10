@@ -18,8 +18,7 @@
             </div>
         </div>
     </div>
-</template>1
-
+</template>
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -27,14 +26,20 @@ export default {
     computed: {
         ...mapGetters(['getPersonatges'])
     },
-  
+    mounted() {
+        console.log('mounted related characters', this.getPersonatges)
+    },
+    destroyed (){
+        alert('desturit')
+        console.log('mounted related characters destruit')
 
-
+    },
     methods: {
         setInfo(item) {
-            console.log('related characters',item)
+            console.log('related characters', item)
             this.$router.push('/infoCharacters')
             this.$store.dispatch('GET_INFOCHARACTERS', item)
+            console.log('related characters', this.getPersonatges)
         },
     }
 }

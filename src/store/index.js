@@ -14,7 +14,7 @@ export default new Vuex.Store({
     species: [],
     vehicles: [],
     infoFilm: [],
-    personatges:[],
+    personatges: [],
     infoCharacters: [],
     infoPlanets: [],
     infoSpecies: [],
@@ -78,7 +78,7 @@ export default new Vuex.Store({
     getInfoVehicles(state) {
       return state.infoVehicles
     },
-    getPersonatges(state){
+    getPersonatges(state) {
       return state.personatges
     }
 
@@ -225,16 +225,13 @@ export default new Vuex.Store({
       const infoVehicles = await (await response).json();
       commit('setInfoVehicles', infoVehicles)
     },
-    async GET_RELATEDCHARACTERS({ commit }) {
-      console.log('GET_RELATEDCHARACTERS info film',this.state.infoFilm)
-      console.log('GET_RELATEDCHARACTERS personatges',this.state.personatges)
-      for (let i = 0; i < this.state.infoFilm.characters.length; i++) {
-        const response = fetch(this.state.infoFilm.characters[i])
+    async GET_RELATEDCHARACTERS({ commit }, item) {
+      for (let i = 0; i < item.characters.length; i++) {
+        const response = fetch(item.characters[i])
         const infoCharaters = await (await response).json();
         this.state.personatges.push(infoCharaters)
         commit('setInfoCharacters', this.state.personatges)
-
-
+        console.log('GET_RELATEDCHARACTERS ->',this.state.personatges)
       }
     },
   },

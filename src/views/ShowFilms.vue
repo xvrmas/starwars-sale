@@ -10,9 +10,7 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
-                                <p style="color:gray" class="title is-size-5">{{
-        item.title
-                                    }}</p>
+                                <p style="color:gray" class="title is-size-5">{{ item.title }}</p>
                             </a>
                         </div>
                     </div>
@@ -34,6 +32,8 @@ export default {
             this.$store.state.infoFilm = item
             this.$store.dispatch("GET_RELATEDCHARACTERS")
             this.$router.push('/infoFilms')
+            this.$store.dispatch("GET_RELATEDCHARACTERS", item)
+
         },
         showImageFilm: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
