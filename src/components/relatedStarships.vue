@@ -10,10 +10,9 @@
                                 :src="`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`"
                                 alt="image film">
                         </figure>
-
                     </div>
                     <a class="nav-link" @click="setInfoStarships(item), showImageShip(item)">
-                        <p class="title has-text-grey is-size-6"> {{ item.name }}</p>
+                        <p class="title has-text-grey is-size-6">related {{ item.name }}</p>
                     </a>
                 </div>
             </div>
