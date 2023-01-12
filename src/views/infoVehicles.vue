@@ -21,9 +21,9 @@
                         <p><strong>Cargo capacity: </strong> {{ getInfoVehicles.cargo_capacity }}</p>
                         <p><strong>Consumables: </strong> {{ getInfoVehicles.consumables }}</p>
                     </div>
+                    <button @click="retroceder" class="button is-dark">Go back</button>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -34,6 +34,11 @@ export default {
     name: 'inoVehicles',
     computed: {
         ...mapGetters(['getInfoVehicles'])
+    },
+    methods: {
+        retroceder() {
+            window.history.back();
+        }
     }
 }
 </script>

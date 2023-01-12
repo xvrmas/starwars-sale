@@ -17,7 +17,7 @@
                         <p><strong>Terrain: </strong> {{ getInfoPlanets.terrain }}</p>
                         <p><strong>Surface water: </strong> {{ getInfoPlanets.surface_water }}</p>
                     </div>
-                    <!-- <relatedFilms ></relatedFilms> -->
+                    <button @click="retroceder" class="button is-dark">Go back</button>
                              
                 </div>
             </div>
@@ -36,7 +36,11 @@ export default {
         ...mapGetters(['getInfoPlanets']),
 
     },
-    
+    methods: {
+        retroceder() {
+            window.history.back();
+        }
+    }
 }
 </script>
 <style>

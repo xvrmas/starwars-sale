@@ -21,6 +21,7 @@
                         <p><strong>Eye color: </strong> {{ getInfoSpecies.eye_colors }}</p>
                         <p><strong>Languaje: </strong> {{ getInfoSpecies.language }}</p>
                     </div>
+                    <button @click="retroceder" class="button is-dark">Go back</button>
                    
                 </div>
             </div>
@@ -36,7 +37,11 @@ export default {
     computed: {
         ...mapGetters(['getInfoSpecies'])
     },
-   
+    methods: {
+        retroceder() {
+            window.history.back();
+        }
+    }
 }
 </script>
 <style>

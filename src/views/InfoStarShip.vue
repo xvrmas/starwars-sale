@@ -7,6 +7,8 @@
             </div>
             <div class="columns mt-4">
                 <div class="column"></div>
+                <button @click="retroceder" class="button is-dark">Go back</button>
+
                 <div class="column is-family-monospace is-size-5 has-text-left-desktop">
                     <h6>Model: <p>{{ getInfoShips.model }}</p>
                     </h6><br>
@@ -49,7 +51,13 @@ export default {
     name: 'InfoStarShip',
     computed: {
         ...mapGetters(['getImageShips', 'getInfoShips'])
+    },
+    methods: {
+        retroceder() {
+            window.history.back();
+        }
     }
+
 }
 </script>
 

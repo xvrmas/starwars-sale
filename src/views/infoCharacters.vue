@@ -30,15 +30,10 @@
                         }} Kgr.</p>
 
                     </div>
-                    <!-- <relatedFilms ></relatedFilms>
-                    <relatedSpecies ></relatedSpecies>
-                    <relatedPlanets></relatedPlanets>
-                    <relatedStarships></relatedStarships>
-                    <relatedvehicles ></relatedvehicles> -->
+                    <button @click="retroceder" class="button is-dark">Go back</button>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 <script>
@@ -55,7 +50,12 @@ export default {
         ...mapGetters(['getInfoCharacters']),
 
     },
-    
+    methods: {
+        retroceder() {
+            window.history.back();
+        }
+    }
+
 }
 </script>
 
