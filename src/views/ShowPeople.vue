@@ -11,7 +11,7 @@
                             </figure>
                             <a class="nav-link" @click="setInfoFilms(item)">
                                 <p style="color:gray" class="title is-size-5">{{
-                                        item.name
+                                    item.name
                                 }}</p>
                             </a>
                         </div>
@@ -19,6 +19,11 @@
                 </div>
             </div>
         </div>
+        <section class="columns is-centered is-multiline">
+            <button @click="decreasePage()" class="button is-dark active m-3">-</button>
+            <h1 class="m-3">Page: {{ this.$store.state.page }} of 9</h1>
+            <button @click="increasePage()" class="button is-dark m-3">+</button>
+        </section>
     </div>
 </template>
 
@@ -29,13 +34,31 @@ export default {
     computed: {
         ...mapGetters(['getPeople'])
     },
+    destroyed (){
+        this.$store.state.page=1
+    },
     methods: {
         setInfoFilms(item) {
             this.$store.state.infoCharacters = item
             this.$router.push('/infoCharacters')
-        }
+        },
+        increasePage() {
+            this.$store.state.page++;
+            if (this.$store.state.page > 9) {
+                this.$store.state.page = 9
+            }
+            this.$store.dispatch("GET_PEOPLE")
+        },
+        decreasePage() {
+            this.$store.state.page--;
+            if (this.$store.state.page < 1) {
+                this.$store.state.page = 1
+            }
+            this.$store.dispatch("GET_PEOPLE")
+        },
     }
 }
+
 </script>
 
 <style scoped>
@@ -53,5 +76,8 @@ export default {
 img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
+}
+h1{
+    color: rgb(133, 131, 131)
 }
 </style>

@@ -19,6 +19,11 @@
                     </div>
                 </div>
             </div>
+            <section class="columns is-centered is-multiline">
+                <button @click="decreasePage()" class="button is-dark active m-3">-</button>
+                <h1 class="m-3">Page: {{ this.$store.state.page }} of 4</h1>
+                <button @click="increasePage()" class="button is-dark m-3">+</button>
+            </section>
         </div>
     </div>
 </template>
@@ -26,7 +31,9 @@
 import { mapGetters, mapMutations, mapState } from 'vuex'
 export default {
     name: 'HomeView',
-
+    destroyed (){
+        this.$store.state.page=1
+    },
 
     methods: {
         setInfoShip(item) {
@@ -58,7 +65,6 @@ export default {
         ...mapMutations(['setShips']),
         ...mapState(['numImg', 'page'])
     },
-
 }
 </script>
 
@@ -86,4 +92,5 @@ img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }
+
 </style>

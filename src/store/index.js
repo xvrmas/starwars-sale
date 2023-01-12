@@ -127,9 +127,10 @@ export default new Vuex.Store({
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/starships/?${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/starships/?page=${this.state.page}`);
       const ships = await response.json();
       commit('setShips', ships)
+      console.log('GET_STARSHIPS->',`https://swapi.dev/api/starships/?${this.state.page}`)
     },
     async GET_IMAGESHIPS({ commit }) {
       try {
@@ -156,7 +157,7 @@ export default new Vuex.Store({
     },
 
     async GET_PEOPLE({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/people?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/people/?page=${this.state.page}`);
       const people = await response.json();
       commit('setPeople', people)
     },

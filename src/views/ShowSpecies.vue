@@ -11,7 +11,7 @@
                             </figure>
                             <a class="nav-link" @click="setInfoSpecies(item)">
                                 <p style="color:gray" class="title is-size-5">{{
-                                        item.name
+                                    item.name
                                 }}</p>
                             </a>
                         </div>
@@ -19,6 +19,11 @@
                 </div>
             </div>
         </div>
+        <section class="columns is-centered is-multiline">
+            <button @click="decreasePage()" class="button is-dark active m-3">-</button>
+            <h1 class="m-3">Page: {{ this.$store.state.page }} of 4</h1>
+            <button @click="increasePage()" class="button is-dark m-3">+</button>
+        </section>
     </div>
 </template>
 
@@ -29,11 +34,32 @@ export default {
     computed: {
         ...mapGetters(['getSpecies'])
     },
-    methods:{
-        setInfoSpecies(item){
+    destroyed (){
+        this.$store.state.page=1
+    },
+    methods: {
+        setInfoSpecies(item) {
             this.$store.state.infoSpecies = item
             this.$router.push('/infoSpecies')
-        }
+        },
+        setInfoFilms(item) {
+            this.$store.state.infoCharacters = item
+            this.$router.push('/infoCharacters')
+        },
+        increasePage() {
+            this.$store.state.page++;
+            if (this.$store.state.page > 4) {
+                this.$store.state.page = 4
+            }
+            this.$store.dispatch("GET_SPECIES")
+        },
+        decreasePage() {
+            this.$store.state.page--;
+            if (this.$store.state.page < 1) {
+                this.$store.state.page = 1
+            }
+            this.$store.dispatch("GET_SPECIES")
+        },
     }
 }
 
@@ -45,11 +71,14 @@ export default {
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }
-.title{
+
+.title {
     margin-top: 20px;
 }
-img{
+
+img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }
+
 </style>

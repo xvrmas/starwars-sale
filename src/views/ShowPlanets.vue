@@ -19,6 +19,11 @@
                 </div>
             </div>
         </div>
+        <section class="columns is-centered is-multiline">
+            <button @click="decreasePage()" class="button is-dark active m-3">-</button>
+            <h1 class="m-3">Page: {{ this.$store.state.page }} of 6</h1>
+            <button @click="increasePage()" class="button is-dark m-3">+</button>
+        </section>
     </div>
 </template>
 
@@ -29,11 +34,32 @@ export default {
     computed: {
         ...mapGetters(['getPlanets'])
     },
+    destroyed (){
+        this.$store.state.page=1
+    },
     methods:{
         setInfoPlanets(item){
             this.$store.state.infoPlanets = item
             this.$router.push('/infoPlanets')
-        }
+        },
+        setInfoFilms(item) {
+            this.$store.state.infoCharacters = item
+            this.$router.push('/infoCharacters')
+        },
+        increasePage() {
+            this.$store.state.page++;
+            if (this.$store.state.page > 6) {
+                this.$store.state.page = 6
+            }
+            this.$store.dispatch("GET_PLANETS")
+        },
+        decreasePage() {
+            this.$store.state.page--;
+            if (this.$store.state.page < 1) {
+                this.$store.state.page = 1
+            }
+            this.$store.dispatch("GET_PLANETS")
+        },
     }
 }
 </script>

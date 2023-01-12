@@ -6,13 +6,14 @@
             </div>
         </div>
         <div class="botons">
-            <a @click="showFilms"  href="#" class="boto_nav">Home</a>
-            <a @click="showPeople" href="#" class="boto_nav">Characters</a>
-            <a @click="showPlanets" href="#" class="boto_nav">Planets</a>
-            <a @click="showSpecies" href="#" class="boto_nav">Species</a>
-            <a @click="starships" href="#" class="boto_nav">Starships</a>
-            <a @click="showVehicles" href="#" class="boto_nav">Vehicles</a>
+            <a @click="showFilms" class="boto_nav">Home</a>
+            <a @click="showPeople" class="boto_nav">Characters</a>
+            <a @click="showPlanets" class="boto_nav">Planets</a>
+            <a @click="showSpecies" class="boto_nav">Species</a>
+            <a @click="starships" class="boto_nav">Starships</a>
+            <a @click="showVehicles" class="boto_nav">Vehicles</a>
         </div>
+        <div class="linea"></div>
     </div>
 </template>
 
@@ -34,7 +35,7 @@ export default {
             this.$store.dispatch("GET_STARSHIPS")
             this.$router.push('/')
         },
-        showImageShip () {
+        showImageShip() {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
             return this.$store.dispatch("GET_IMAGESHIPS", item)
         },
@@ -79,6 +80,8 @@ export default {
     color: gray;
     margin: 20px;
     font-size: x-large;
+    border-bottom:solid gb(191, 147, 0) 2px;
+
 }
 
 a {
@@ -98,4 +101,5 @@ a:focus {
 .caixa {
     background-color: black;
 }
+
 </style>
