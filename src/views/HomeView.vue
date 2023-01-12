@@ -21,7 +21,7 @@
             </div>
             <section class="columns is-centered is-multiline">
                 <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-                <h1 class="m-3">Page: {{ this.$store.state.page }} of 4</h1>
+                <h1 class="m-3">Page: {{ this.$store.state.pageStarships }} of 4</h1>
                 <button @click="increasePage()" class="button is-dark m-3">+</button>
             </section>
         </div>
@@ -41,16 +41,16 @@ export default {
             this.$router.push('/infoStarShip')
         },
         increasePage() {
-            this.$store.state.page++;
-            if (this.$store.state.page > 4) {
-                this.$store.state.page = 4
+            this.$store.state.pageStarships++;
+            if (this.$store.state.pageStarships > 4) {
+                this.$store.state.pageStarships = 4
             }
             this.$store.dispatch("GET_STARSHIPS")
         },
         decreasePage() {
-            this.$store.state.page--;
-            if (this.$store.state.page < 1) {
-                this.$store.state.page = 1
+            this.$store.state.pageStarships--;
+            if (this.$store.state.pageStarships < 1) {
+                this.$store.state.pageStarships = 1
             }
             this.$store.dispatch("GET_STARSHIPS")
         },

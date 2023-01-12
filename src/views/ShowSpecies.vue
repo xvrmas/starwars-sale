@@ -21,7 +21,7 @@
         </div>
         <section class="columns is-centered is-multiline">
             <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-            <h1 class="m-3">Page: {{ this.$store.state.page }} of 4</h1>
+            <h1 class="m-3">Page: {{ this.$store.state.pageSpecies }} of 4</h1>
             <button @click="increasePage()" class="button is-dark m-3">+</button>
         </section>
     </div>
@@ -34,9 +34,7 @@ export default {
     computed: {
         ...mapGetters(['getSpecies'])
     },
-    destroyed (){
-        this.$store.state.page=1
-    },
+  
     methods: {
         setInfoSpecies(item) {
             this.$store.state.infoSpecies = item
@@ -47,16 +45,16 @@ export default {
             this.$router.push('/infoCharacters')
         },
         increasePage() {
-            this.$store.state.page++;
-            if (this.$store.state.page > 4) {
-                this.$store.state.page = 4
+            this.$store.state.pageSpecies++;
+            if (this.$store.state.pageSpecies > 4) {
+                this.$store.state.pageSpecies = 4
             }
             this.$store.dispatch("GET_SPECIES")
         },
         decreasePage() {
-            this.$store.state.page--;
-            if (this.$store.state.page < 1) {
-                this.$store.state.page = 1
+            this.$store.state.pageSpecies--;
+            if (this.$store.state.pageSpecies < 1) {
+                this.$store.state.pageSpecies = 1
             }
             this.$store.dispatch("GET_SPECIES")
         },

@@ -21,7 +21,7 @@
         </div>
         <section class="columns is-centered is-multiline">
             <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-            <h1 class="m-3">Page: {{ this.$store.state.page }} of 4</h1>
+            <h1 class="m-3">Page: {{ this.$store.state.pageVehicles }} of 4</h1>
             <button @click="increasePage()" class="button is-dark m-3">+</button>
         </section>
     </div>
@@ -35,25 +35,23 @@ export default {
     computed: {
         ...mapGetters(['getVehicles'])
     },
-    destroyed (){
-        this.$store.state.page=1
-    },
+   
     methods: {
         getInfoVehicles(item) {
             this.$store.state.infoVehicles = item
             this.$router.push('/infoVehicles')
         },
         increasePage() {
-            this.$store.state.page++;
-            if (this.$store.state.page > 4) {
-                this.$store.state.page = 4
+            this.$store.state.pageVehicles++;
+            if (this.$store.state.pageVehicles > 4) {
+                this.$store.state.pageVehicles = 4
             }
             this.$store.dispatch("GET_VEHICLES")
         },
         decreasePage() {
-            this.$store.state.page--;
-            if (this.$store.state.page < 1) {
-                this.$store.state.page = 1
+            this.$store.state.pageVehicles--;
+            if (this.$store.state.pageVehicles < 1) {
+                this.$store.state.pageVehicles = 1
             }
             this.$store.dispatch("GET_VEHICLES")
         },

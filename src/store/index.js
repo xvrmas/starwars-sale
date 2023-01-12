@@ -19,7 +19,11 @@ export default new Vuex.Store({
     infoSpecies: [],
     infoVehicles: [],
     arrayRelatedItems: [],
-    page: 1,
+    pagePeople: 1,
+    pagePlanets: 1,
+    pageSpecies: 1,
+    pageVehicles: 1,
+    pageStarships: 1,
     numImg: 1,
     imageShips: '',
     imageFilm: ''
@@ -127,7 +131,7 @@ export default new Vuex.Store({
   },
   actions: {
     async GET_STARSHIPS({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/starships/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/starships/?page=${this.state.pageStarships}`);
       const ships = await response.json();
       commit('setShips', ships)
       console.log('GET_STARSHIPS->',`https://swapi.dev/api/starships/?${this.state.page}`)
@@ -157,24 +161,24 @@ export default new Vuex.Store({
     },
 
     async GET_PEOPLE({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/people/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/people/?page=${this.state.pagePeople}`);
       const people = await response.json();
       commit('setPeople', people)
     },
 
     async GET_PLANETS({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/planets/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/planets/?page=${this.state.pagePlanets}`);
       const planets = await response.json();
       commit('setPlanets', planets)
     },
     async GET_SPECIES({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/species/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/species/?page=${this.state.pageSpecies}`);
       const species = await response.json();
       commit('setSpecies', species)
     },
 
     async GET_VEHICLES({ commit }) {
-      const response = await fetch(`https://swapi.dev/api/vehicles/?page=${this.state.page}`);
+      const response = await fetch(`https://swapi.dev/api/vehicles/?page=${this.state.pageVehicles}`);
       const vehicles = await response.json();
       commit('setVehicles', vehicles)
     },
