@@ -21,12 +21,11 @@
         </div>
         <section class="columns is-centered is-mobile is-multiline">
             <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-            <h1 class="m-3">Page: {{ this.$store.state.pagePeople }} of 9</h1>
+            <h1 class="m-3 has-text-gray">Page: {{ this.$store.state.pagePeople }} of 9</h1>
             <button @click="increasePage()" class="button is-dark m-3">+</button>
         </section>
     </div>
 </template>
-
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -61,8 +60,8 @@ export default {
 
 <style scoped>
 .card {
-    width: 35vh;
-    height: 60vh;
+    width: 25vh;
+    height: 50vh;
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }

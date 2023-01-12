@@ -11,7 +11,7 @@
                                 alt="image film">
                         </figure>
                         <a class="nav-link" @click="setInfo(item)">
-                            <p class="title has-text-grey is-size-6"> {{ item.name }}</p>
+                            <p class="title has-text-grey-lighter is-size-6"> {{ item.name }}</p>
                         </a>
                     </div>
                 </div>
@@ -37,10 +37,8 @@ export default {
         this.getcharacters()
     },
 
-
     methods: {
         setInfo(item) {
-            console.log('related characters',item)
             this.$router.push('/infoCharacters')
             this.$store.dispatch('GET_INFOCHARACTERS', item)
         },
@@ -51,7 +49,6 @@ export default {
                 this.personatges.push(infoCharaters)
             }
         },
-
     }
 }
 </script>

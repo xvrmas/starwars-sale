@@ -134,7 +134,6 @@ export default new Vuex.Store({
       const response = await fetch(`https://swapi.dev/api/starships/?page=${this.state.pageStarships}`);
       const ships = await response.json();
       commit('setShips', ships)
-      console.log('GET_STARSHIPS->',`https://swapi.dev/api/starships/?${this.state.page}`)
     },
     async GET_IMAGESHIPS({ commit }) {
       try {
@@ -148,6 +147,7 @@ export default new Vuex.Store({
       } catch (error) {
         console.log('error url imatge')
       }
+      console.log('image ship',imageShips)
     },
     async GET_INFOSTARSHIPS({ commit }, item) {
       const response = await fetch(item.url);
@@ -211,7 +211,6 @@ export default new Vuex.Store({
     async GET_INFOPLANET({ commit }, item) {
       const response = fetch(item.url)
       const infoPlanets = await (await response).json();
-      console.log('get info planets-->', infoPlanets)
 
       commit('setInfoPlanets', infoPlanets)
     },

@@ -21,7 +21,7 @@
         </div>
         <section class="columns is-centered is-multiline">
             <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-            <h1 class="m-3">Page: {{ this.$store.state. pagePlanets }} of 6</h1>
+            <h1 class="m-3 has-text-gray">Page: {{ this.$store.state. pagePlanets }} of 6</h1>
             <button @click="increasePage()" class="button is-dark m-3">+</button>
         </section>
     </div>
@@ -63,8 +63,8 @@ export default {
 </script>
 <style scoped>
 .card {
-    width: 40vh;
-    height: 50vh;
+    width: 30vh;
+    height: 40vh;
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }

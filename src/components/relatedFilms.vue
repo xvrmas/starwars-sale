@@ -70,7 +70,7 @@ export default {
     background-color: rgb(45, 45, 45);
     margin: 1px;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 img {

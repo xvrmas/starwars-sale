@@ -37,7 +37,7 @@ export default {
         },
         showImageShip() {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
-            return this.$store.dispatch("GET_IMAGESHIPS", item)
+            return this.$store.dispatch("GET_IMAGESHIPS")
         },
         showFilms() {
             this.$router.push('/showFilms')

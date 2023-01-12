@@ -1,13 +1,12 @@
 <template>
     <div class="caixa">
         <div class="text-white">
-            <p class="is-size-3 is-start is-family-sans-serif mb-4">{{ getInfoShips.name }}</p>
+            <p class="is-size-3 is-start is-family-sans-serif has-text-grey-lighter mb-4">{{ getInfoShips.name }}</p>
             <div class="caixaImatge">
                 <img :src="getImageShips">
             </div>
             <div class="columns mt-4">
                 <div class="column"></div>
-                <button @click="retroceder" class="button is-dark">Go back</button>
 
                 <div class="column is-family-monospace is-size-5 has-text-left-desktop">
                     <h6>Model: <p>{{ getInfoShips.model }}</p>
@@ -40,6 +39,8 @@
                 </div>
                 <div class="column"></div>
             </div>
+            <button @click="retroceder" class="button is-dark">Go back</button>
+
         </div>
     </div>
 </template>
