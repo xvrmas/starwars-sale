@@ -4,6 +4,11 @@
             <div class="columns">
                 <div class="column is-half mt-3">
                     <img :src="getImageFilm">
+                    <div class="mt-3">
+                    <relatedSpecies></relatedSpecies>
+                    <relatedPlanets></relatedPlanets>
+                    <relatedStarships></relatedStarships>
+                </div>
                 </div>
                 <div class="column has-text-left is-half mt-3">
                     <div class="box">
@@ -13,11 +18,12 @@
                         <p><strong>Release date: </strong>{{ infoFilm.release_date }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.opening_crawl }}</p>
                     </div>
-                    <relatedCharacters ></relatedCharacters>
-                    <relatedSpecies ></relatedSpecies>
-                    <relatedPlanets></relatedPlanets>
-                    <relatedStarships ></relatedStarships>
-                    <relatedvehicles></relatedvehicles>
+                    <div class="column">
+                        <relatedCharacters></relatedCharacters>
+                    </div>
+                    <div class="column">
+                        <relatedvehicles></relatedvehicles>
+                    </div>
                 </div>
             </div>
         </div>
