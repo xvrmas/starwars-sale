@@ -5,10 +5,8 @@
                 <div class="column is-half mt-3">
                     <img :src="getImageFilm">
                     <div class="mt-3">
-                    <relatedSpecies></relatedSpecies>
-                    <relatedPlanets></relatedPlanets>
-                    <relatedStarships></relatedStarships>
-                </div>
+                    </div>
+
                 </div>
                 <div class="column has-text-left is-half mt-3">
                     <div class="box">
@@ -19,9 +17,12 @@
                         <p><strong>Synopsis: </strong>{{ infoFilm.opening_crawl }}</p>
                     </div>
                     <div class="column">
+                        <relatedSpecies></relatedSpecies>
+                        <relatedPlanets></relatedPlanets>
                         <relatedCharacters></relatedCharacters>
                     </div>
                     <div class="column">
+                        <relatedStarships></relatedStarships>
                         <relatedvehicles></relatedvehicles>
                     </div>
                 </div>
@@ -60,4 +61,6 @@ strong {
 .caixa {
     background-color: black;
 }
+
+@media all and (max-width: 820px) {}
 </style>
