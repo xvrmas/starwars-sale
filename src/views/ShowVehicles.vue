@@ -63,7 +63,7 @@ export default {
 <style scoped>
 .card {
     width: 35vh;
-    height: 33vh;
+    height: 35vh;
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }

@@ -31,7 +31,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-    name: 'inoVehicles',
+    name: 'infoVehicles',
     computed: {
         ...mapGetters(['getInfoVehicles'])
     },
