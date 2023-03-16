@@ -10,7 +10,7 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
-                                <p style="color:gray" class="title is-size-5">{{ item.episode_id }}</p>
+                                <p style="color:gray" class="title is-size-5">{{ item.title }}</p>
                             </a>
                         </div>
                     </div>
