@@ -36,7 +36,6 @@ export default {
         document.getElementById("op5").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
     },
     destroyed() {
-        this.$store.state.page = 1;
         document.getElementById("op5").style.borderBottom = 'none';
     },
 

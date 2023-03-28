@@ -87,10 +87,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    border-bottom: solid rgb(191, 147, 0) 2px;
-
-}
 .caixa {
     background-color: black;
 }
