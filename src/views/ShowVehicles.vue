@@ -11,7 +11,7 @@
                             </figure>
                             <a class="nav-link">
                                 <p style="color:gray" @click="getInfoVehicles(item)" class="title is-size-5">{{
-                                        item.name
+                                    item.name
                                 }} </p>
                             </a>
                         </div>
@@ -35,7 +35,12 @@ export default {
     computed: {
         ...mapGetters(['getVehicles'])
     },
-   
+    mounted() {
+        document.getElementById("op6").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op6").style.borderBottom = 'none';
+    },
     methods: {
         getInfoVehicles(item) {
             this.$store.state.infoVehicles = item

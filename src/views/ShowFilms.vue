@@ -27,6 +27,12 @@ export default {
     computed: {
         ...mapGetters(['getFilms', 'getImageFilm'])
     },
+    mounted(){  
+        document.getElementById("op1").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed(){
+        document.getElementById("op1").style.borderBottom = 'none';
+    },
     methods: {
         setInfoFilm(item) {
             this.$store.state.infoFilm = item

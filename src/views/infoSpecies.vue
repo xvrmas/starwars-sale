@@ -37,6 +37,12 @@ export default {
     computed: {
         ...mapGetters(['getInfoSpecies'])
     },
+    mounted() {
+        document.getElementById("op4").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op4").style.borderBottom = 'none';
+    },
     methods: {
         retroceder() {
             window.history.back();

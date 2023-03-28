@@ -45,8 +45,12 @@ export default {
         ...mapState(['infoFilm']),
         ...mapGetters(['getImageFilm'])
     },
-
-
+    mounted() {
+        document.getElementById("op1").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op1").style.borderBottom = 'none';
+    },
 }
 </script>
 <style scoped>

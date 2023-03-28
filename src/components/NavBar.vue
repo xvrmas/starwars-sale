@@ -6,12 +6,12 @@
             </div>
         </div>
         <div class="botons">
-            <a @click="showFilms()" class="boto_nav">Home</a>
-            <a @click="showPeople()" class="boto_nav">Characters</a>
-            <a @click="showPlanets()" class="boto_nav">Planets</a>
-            <a @click="showSpecies()" class="boto_nav">Species</a>
-            <a @click="starships(), showImageShip()" class="boto_nav">Starships</a>
-            <a @click="showVehicles" class="boto_nav">Vehicles</a>
+            <a @click="showFilms()" id="op1" class="boto_nav">Films</a>
+            <a @click="showPeople()" id="op2" class="boto_nav">Characters</a>
+            <a @click="showPlanets()" id="op3" class="boto_nav">Planets</a>
+            <a @click="showSpecies()" id="op4" class="boto_nav">Species</a>
+            <a @click="starships(), showImageShip()" id="op5" class="boto_nav">Starships</a>
+            <a @click="showVehicles()" id="op6" class="boto_nav">Vehicles</a>
         </div>
         <div class="linea"></div>
     </div>
@@ -91,12 +91,6 @@ a:hover {
     border-bottom: solid rgb(191, 147, 0) 2px;
 
 }
-
-a:focus {
-    color: rgb(191, 147, 0);
-    border-bottom: solid rgb(191, 147, 0) 2px;
-}
-
 .caixa {
     background-color: black;
 }

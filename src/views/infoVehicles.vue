@@ -35,6 +35,12 @@ export default {
     computed: {
         ...mapGetters(['getInfoVehicles'])
     },
+    mounted() {
+        document.getElementById("op6").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op6").style.borderBottom = 'none';
+    },
     methods: {
         retroceder() {
             window.history.back();

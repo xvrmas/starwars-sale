@@ -33,7 +33,13 @@ export default {
     computed: {
         ...mapGetters(['getPeople'])
     },
-   
+    mounted() {
+        document.getElementById("op2").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op2").style.borderBottom = 'none';
+    },
+
     methods: {
         setInfoFilms(item) {
             this.$store.state.infoCharacters = item
@@ -74,7 +80,8 @@ img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }
-h1{
+
+h1 {
     color: rgb(133, 131, 131)
 }
 </style>

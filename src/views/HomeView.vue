@@ -31,8 +31,13 @@
 import { mapGetters, mapMutations, mapState } from 'vuex'
 export default {
     name: 'HomeView',
-    destroyed (){
-        this.$store.state.page=1
+    mounted() {
+
+        document.getElementById("op5").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        this.$store.state.page = 1;
+        document.getElementById("op5").style.borderBottom = 'none';
     },
 
     methods: {
@@ -92,5 +97,4 @@ img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }
-
 </style>

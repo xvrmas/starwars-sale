@@ -10,8 +10,8 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link">
-                                <p style="color:gray"  @click="setInfoPlanets(item)" class="title is-size-5">{{
-                                        item.name
+                                <p style="color:gray" @click="setInfoPlanets(item)" class="title is-size-5">{{
+                                    item.name
                                 }}</p>
                             </a>
                         </div>
@@ -21,7 +21,7 @@
         </div>
         <section class="columns is-centered is-multiline">
             <button @click="decreasePage()" class="button is-dark active m-3">-</button>
-            <h1 class="m-3 has-text-gray">Page: {{ this.$store.state. pagePlanets }} of 6</h1>
+            <h1 class="m-3 has-text-gray">Page: {{ this.$store.state.pagePlanets }} of 6</h1>
             <button @click="increasePage()" class="button is-dark m-3">+</button>
         </section>
     </div>
@@ -34,9 +34,15 @@ export default {
     computed: {
         ...mapGetters(['getPlanets'])
     },
-   
-    methods:{
-        setInfoPlanets(item){
+    mounted() {
+        document.getElementById("op3").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op3").style.borderBottom = 'none';
+    },
+
+    methods: {
+        setInfoPlanets(item) {
             this.$store.state.infoPlanets = item
             this.$router.push('/infoPlanets')
         },
@@ -45,16 +51,16 @@ export default {
             this.$router.push('/infoCharacters')
         },
         increasePage() {
-            this.$store.state. pagePlanets++;
-            if (this.$store.state. pagePlanets > 6) {
-                this.$store.state. pagePlanets = 6
+            this.$store.state.pagePlanets++;
+            if (this.$store.state.pagePlanets > 6) {
+                this.$store.state.pagePlanets = 6
             }
             this.$store.dispatch("GET_PLANETS")
         },
         decreasePage() {
-            this.$store.state. pagePlanets--;
-            if (this.$store.state. pagePlanets < 1) {
-                this.$store.state. pagePlanets = 1
+            this.$store.state.pagePlanets--;
+            if (this.$store.state.pagePlanets < 1) {
+                this.$store.state.pagePlanets = 1
             }
             this.$store.dispatch("GET_PLANETS")
         },
@@ -68,10 +74,12 @@ export default {
     background-color: rgb(30, 30, 30);
     margin: 20px;
 }
-.title{
+
+.title {
     margin-top: 20px;
 }
-img{
+
+img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }

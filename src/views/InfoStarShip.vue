@@ -53,6 +53,12 @@ export default {
     computed: {
         ...mapGetters(['getImageShips', 'getInfoShips'])
     },
+    mounted() {
+        document.getElementById("op5").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op5").style.borderBottom = 'none';
+    },
     methods: {
         retroceder() {
             window.history.back();

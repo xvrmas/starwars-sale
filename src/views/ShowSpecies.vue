@@ -34,7 +34,13 @@ export default {
     computed: {
         ...mapGetters(['getSpecies'])
     },
-  
+    mounted() {
+        document.getElementById("op4").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    destroyed() {
+        document.getElementById("op4").style.borderBottom = 'none';
+    },
+
     methods: {
         setInfoSpecies(item) {
             this.$store.state.infoSpecies = item
@@ -78,5 +84,4 @@ img {
     border-bottom: solid rgb(191, 147, 0) 3px;
 
 }
-
 </style>
