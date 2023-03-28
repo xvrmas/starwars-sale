@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style>
+.box{
+    background-color: rgb(45, 45, 45);
+}
 .caixa {
     background-color: black;
 }
