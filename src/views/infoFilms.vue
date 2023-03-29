@@ -66,5 +66,4 @@ strong {
     background-color: black;
 }
 
-@media all and (max-width: 820px) {}
 </style>

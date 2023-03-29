@@ -4,17 +4,17 @@
             <div>
                 <img src="@/assets/star-wars-4.svg" style="width:250px;margin:20px" alt="">
             </div>
-            <div class="linea"></div>
         </div>
         <div class="botons">
-            <a @click="showFilms()" id="op1" class="boto_nav">Films</a>
-            <a @click="showPeople()" id="op2" class="boto_nav">Characters</a>
-            <a @click="showPlanets()" id="op3" class="boto_nav">Planets</a>
-            <a @click="showSpecies()" id="op4" class="boto_nav">Species</a>
-            <a @click="starships(), showImageShip()" id="op5" class="boto_nav">Starships</a>
-            <a @click="showVehicles()" id="op6" class="boto_nav">Vehicles</a>
+            <div>
+                <a @click="showFilms()" id="op1" class="boto_nav">Films</a>
+                <a @click="showPeople()" id="op2" class="boto_nav">Characters</a>
+                <a @click="showPlanets()" id="op3" class="boto_nav">Planets</a>
+                <a @click="showSpecies()" id="op4" class="boto_nav">Species</a>
+                <a @click="starships(), showImageShip()" id="op5" class="boto_nav">Starships</a>
+                <a @click="showVehicles()" id="op6" class="boto_nav">Vehicles</a>
+            </div>
         </div>
-        <div class="linea"></div>
     </div>
 </template>
 
@@ -73,6 +73,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-bottom: solid rgb(67, 59, 33) 2px; 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -89,10 +90,17 @@ a {
 .caixa {
     background-color: black;
 }
-a:hover{
-    color:aliceblue;
+
+a:hover {
+    color: aliceblue;
 }
-.linea {
-    border-bottom: solid rgb(67, 59, 33) 2px;
-}
+
+
+/*@media all and (max-width: 845px) {
+ .linea{
+    border-bottom: 0px;
+    width: fit-content;
+ }
+}*/
+
 </style>
