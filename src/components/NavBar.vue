@@ -89,7 +89,9 @@ a {
 .caixa {
     background-color: black;
 }
-
+a:hover{
+    color:aliceblue;
+}
 .linea {
     border-bottom: solid rgb(67, 59, 33) 2px;
 }
