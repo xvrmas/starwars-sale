@@ -77,7 +77,7 @@ export default {
 }
 
 .boto_nav {
-    color: gray;
+    color: rgb(165, 163, 163);
     margin: 20px;
     font-size: x-large;
 }
