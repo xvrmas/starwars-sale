@@ -1,6 +1,6 @@
 <template>
     <div class="contenidor">
-        <div class="border ">
+        <div class="border p-5">
             <div>
                 <div class="columns is-multiline is-centered is-mobile">
                     <div v-for="(item, i) in getStarShips.results" :key="i">

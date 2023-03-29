@@ -4,6 +4,7 @@
             <div>
                 <img src="@/assets/star-wars-4.svg" style="width:250px;margin:20px" alt="">
             </div>
+            <div class="linea"></div>
         </div>
         <div class="botons">
             <a @click="showFilms()" id="op1" class="boto_nav">Films</a>
@@ -79,8 +80,6 @@ export default {
     color: gray;
     margin: 20px;
     font-size: x-large;
-    border-bottom: solid gb(191, 147, 0) 2px;
-
 }
 
 a {
@@ -89,5 +88,9 @@ a {
 
 .caixa {
     background-color: black;
+}
+
+.linea {
+    border-bottom: solid rgb(67, 59, 33) 2px;
 }
 </style>
