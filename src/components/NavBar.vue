@@ -73,7 +73,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border-bottom: solid rgb(67, 59, 33) 2px; 
+    border-bottom: solid rgb(67, 59, 33) 2px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -96,11 +96,11 @@ a:hover {
 }
 
 
-/*@media all and (max-width: 845px) {
- .linea{
-    border-bottom: 0px;
-    width: fit-content;
- }
-}*/
-
+@media (max-width: 845px) {
+    .boto_nav {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        border-bottom: none;
+    }
+}
 </style>
