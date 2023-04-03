@@ -28,19 +28,16 @@ export default {
 .hero {
     background-image: url(@/assets/darthvader.jpg);
     background-color: rgb(0, 0, 0);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
     color: white;
 }
 .adres {
     color:rgb(191, 147, 0);
     text-align: start;
 }
-.text {
-    margin-left: 250px;
-    color:rgb(191, 147, 0)
-}
-strong{
-  color:rgb(191, 147, 0)
-}
+
 .copy {
     padding: 0;
     color:rgb(191, 147, 0);

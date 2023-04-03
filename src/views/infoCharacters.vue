@@ -67,6 +67,7 @@ export default {
 <style>
 .caixa {
     background-color: black;
+    height: max-content;
 }
 
 strong {
