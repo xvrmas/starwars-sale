@@ -98,9 +98,7 @@ a:hover {
 
 @media (max-width: 845px) {
     .boto_nav {
-        display: grid;
-        grid-template-rows: repeat(1, 1fr);
-        border-bottom: none;
+        display:inline-table;
     }
 }
 </style>
