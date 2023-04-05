@@ -24,7 +24,7 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'relatedVehicles',
     computed: {
-        ...mapGetters(['getInfoFilms'])
+        ...mapGetters(['getInfoFilms', ' getImageShips'])
     },
     data() {
         return {
