@@ -30,18 +30,21 @@ export default {
             let i = 0;
             let j = 0;
             let temp = '';
-            while (i < 6) {
-                j = i + 1;
-                while (j < 6) {
-                    if (this.getFilms[i].episode_id > this.getFilms[j].episode_id) {
-                        temp = this.getFilms[i];
-                        this.getFilms[i] = this.getFilms[j]
-                        this.getFilms[j] = temp
+            if (this.getFilms.length == 0) {
+                console.log('loading...')
+            } else
+                while (i < 6) {
+                    j = i + 1;
+                    while (j < 6) {
+                        if (this.getFilms[i].episode_id > this.getFilms[j].episode_id) {
+                            temp = this.getFilms[i];
+                            this.getFilms[i] = this.getFilms[j]
+                            this.getFilms[j] = temp
+                        }
+                        j++;
                     }
-                    j++;
+                    i++;
                 }
-                i++;
-            }
             return this.getFilms;
         }
     },
