@@ -139,7 +139,6 @@ export default new Vuex.Store({
       try {
         const response = await fetch(`https://starwars-visualguide.com/assets/img/starships/${this.state.numImg}.jpg`);
         const imageShips = response.url;
-        console.log(imageShips)
         if (response.status == 404) {
           this.state.imageShips = 'https://www.cityofkingman.gov/Home/ShowPublishedImage/2744/636934515291700000'
         } else {
@@ -159,7 +158,6 @@ export default new Vuex.Store({
       const response = await fetch(`https://swapi.dev/api/films/`);
       let films = await response.json();
       films = films.results
-      console.log(films)
       commit('setFilms', films)
     },
 
