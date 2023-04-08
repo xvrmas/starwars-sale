@@ -157,7 +157,9 @@ export default new Vuex.Store({
     },
     async GET_FILMS({ commit }) {
       const response = await fetch(`https://swapi.dev/api/films/`);
-      const films = await response.json();
+      let films = await response.json();
+      films = films.results
+      console.log(films)
       commit('setFilms', films)
     },
 

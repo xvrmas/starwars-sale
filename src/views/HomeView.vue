@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <section class="columns is-centered is-multiline">
+            <section class="columns is-centered is-mobile is-multiline">
                 <button @click="decreasePage()" class="button is-dark active m-3">-</button>
                 <h1 class="m-3">Page: {{ this.$store.state.pageStarships }} of 4</h1>
                 <button @click="increasePage()" class="button is-dark m-3">+</button>

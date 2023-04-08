@@ -2,7 +2,7 @@
     <div class="border p-5">
         <div>
             <div class="columns is-multiline is-centered is-mobile">
-                <div v-for="(item, i) in getFilms.results" :key="i">
+                <div v-for="(item, i) in getFilms" :key="i">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
@@ -25,10 +25,13 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'ShowFilms',
     computed: {
-        ...mapGetters(['getFilms', 'getImageFilm'])
+        ...mapGetters(['getFilms', 'getImageFilm']),
     },
     mounted(){  
         document.getElementById("op1").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
+    },
+    created(){
+        console.log('created',this.getFilms.title)
     },
     destroyed(){
         document.getElementById("op1").style.borderBottom = 'none';
