@@ -43,7 +43,6 @@ export default {
                 i++;
             }
             return this.getFilms;
-
         }
     },
     mounted() {

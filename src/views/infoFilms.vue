@@ -13,7 +13,7 @@
                         <p><strong>Title: </strong> {{ infoFilm.title }}</p>
                         <p><strong>Director: </strong> {{ infoFilm.director }}</p>
                         <p><strong>Producer(s): </strong>{{ infoFilm.producer }}</p>
-                        <p><strong>Release date: </strong>{{ infoFilm.release_date }}</p>
+                        <p><strong>Release date: </strong>{{ orderDate }}</p>
                         <p><strong>Synopsis: </strong>{{ infoFilm.opening_crawl }}</p>
                     </div>
                     <div class="column">
@@ -43,7 +43,11 @@ export default {
     components: { relatedCharacters, relatedPlanets, relatedSpecies, relatedStarships, relatedvehicles },
     computed: {
         ...mapState(['infoFilm']),
-        ...mapGetters(['getImageFilm'])
+        ...mapGetters(['getImageFilm']),
+        orderDate(){
+           let order =  this.infoFilm.release_date.split('-').reverse().join('-')
+           return order;
+        }
     },
     mounted() {
         document.getElementById("op1").style.borderBottom = 'solid rgb(191, 147, 0) 3px';
