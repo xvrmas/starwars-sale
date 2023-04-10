@@ -3,6 +3,7 @@
         <div class="caixa ">
             <div>
                 <img src="@/assets/star-wars-4.svg" style="width:250px;margin:20px" alt="">
+                <b-button class="is-rounded is-dark" style="margin-top:5%;margin-left: 5%;" @click="info()">Info</b-button>
             </div>
         </div>
         <div class="botons">
@@ -14,6 +15,7 @@
                 <a @click="starships(), showImageShip()" id="op5" class="boto_nav">Starships</a>
                 <a @click="showVehicles()" id="op6" class="boto_nav">Vehicles</a>
             </div>
+
         </div>
     </div>
 </template>
@@ -59,6 +61,9 @@ export default {
         showVehicles() {
             this.$router.push('showVehicles')
             this.$store.dispatch('GET_VEHICLES')
+        },
+        info() {
+            alert('')
         }
 
     }
@@ -98,7 +103,7 @@ a:hover {
 
 @media (max-width: 845px) {
     .boto_nav {
-        display:inline-table;
+        display: inline-table;
     }
 }
 </style>

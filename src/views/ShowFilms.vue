@@ -10,7 +10,8 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
-                                <p style="color:gray" class="title is-size-5">{{ item.title }}</p>
+                                <p style="color:gray" class="title is-size-6">Episode {{ item.episode_id }}</p>
+                                <p style="color:gray" class="title has-text-weight-bold is-size-5">{{ item.title }}</p>
                             </a>
                         </div>
                     </div>
@@ -31,11 +32,11 @@ export default {
             let j = 0;
             let temp = '';
             if (this.getFilms.length == 0) {
-                console.log('loading...')
+                console.log('')
             } else
-                while (i < 6) {
+                while (i < this.getFilms.length) {
                     j = i + 1;
-                    while (j < 6) {
+                    while (j < this.getFilms.length) {
                         if (this.getFilms[i].episode_id > this.getFilms[j].episode_id) {
                             temp = this.getFilms[i];
                             this.getFilms[i] = this.getFilms[j]
@@ -77,7 +78,7 @@ export default {
 }
 
 .title {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 img {
