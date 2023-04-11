@@ -240,12 +240,12 @@ export default new Vuex.Store({
         if (response.status == 404) {
           this.state.imageVehicles = 'https://www.cityofkingman.gov/Home/ShowPublishedImage/2744/636934515291700000'
         } else {
-          commit('setImageShips', imageVehicles)
+          commit('setImageVehicles', imageVehicles)
         }
       } catch (error) {
         console.log('error url imatge')
       }
-      console.log('image ship',imageShips)
+      console.log('image ship',imageVehicles)
     },
     
   },

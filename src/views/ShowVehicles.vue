@@ -67,6 +67,7 @@ export default {
         },
         showImageVehicle: function (item) {
             this.$store.state.numImg = item.url.split(/\D/g).join('')
+            console.log('item',item.url.split(/\D/g).join(''))
             this.$store.dispatch("GET_IMAGEVEHICLES", item)
         },
 
