@@ -26,7 +26,8 @@ export default new Vuex.Store({
     pageStarships: 1,
     numImg: 1,
     imageShips: '',
-    imageFilm: ''
+    imageFilm: '',
+    imageVehicles:''
   },
   getters: {
     getStarShips(state) {
@@ -68,6 +69,9 @@ export default new Vuex.Store({
     },
     getImageFilm(state) {
       return state.imageFilm
+    },
+    getImageVehicles(state){
+      return state.imageVehicles
     },
     getInfoCharacters(state) {
       return state.infoCharacters
@@ -127,6 +131,9 @@ export default new Vuex.Store({
     setInfoVehicles(state, setInfoVehiclesAction) {
       state.infoVehicles = setInfoVehiclesAction
     },
+    setImageVehicles(state, setimageVehiclesAction){
+      state.imageVehicles = setimageVehiclesAction
+    }
 
   },
   actions: {
@@ -226,6 +233,21 @@ export default new Vuex.Store({
       const infoVehicles = await (await response).json();
       commit('setInfoVehicles', infoVehicles)
     },
+    async GET_IMAGEVEHICLES({ commit }) {
+      try {
+        const response = await fetch(`https://starwars-visualguide.com/assets/img/vehicles/${this.state.numImg}.jpg`);
+        const imageVehicles = response.url;
+        if (response.status == 404) {
+          this.state.imageVehicles = 'https://www.cityofkingman.gov/Home/ShowPublishedImage/2744/636934515291700000'
+        } else {
+          commit('setImageShips', imageVehicles)
+        }
+      } catch (error) {
+        console.log('error url imatge')
+      }
+      console.log('image ship',imageShips)
+    },
+    
   },
   modules: {
   }

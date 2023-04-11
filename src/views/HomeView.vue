@@ -8,7 +8,7 @@
                             <div class="card-image">
                                 <figure class="image">
                                     <img :src="(`https://starwars-visualguide.com/assets/img/starships/${item.url.split(/\D/g).join('')}.jpg`)"
-                                        alt="image film">
+                                    @error ="setErrorImg"   alt="image film">
                                 </figure>
                                 <a class="nav-link" @click="setInfoShip(item), showImageShip(item)">
                                     <p style="color:gray" class="title is-size-5">{{ item.name }}
@@ -29,6 +29,7 @@
 </template>
 <script>
 import { mapGetters, mapMutations, mapState } from 'vuex'
+import notImg from '@/assets/errorImg/notImg.jpg'
 export default {
     name: 'HomeView',
     mounted() {
@@ -40,6 +41,9 @@ export default {
     },
 
     methods: {
+        setErrorImg(e) {
+            e.target.src = notImg
+        },
         setInfoShip(item) {
             this.$store.state.infoTechShip = item
             this.$router.push('/infoStarShip')

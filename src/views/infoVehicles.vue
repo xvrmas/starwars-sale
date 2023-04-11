@@ -3,7 +3,7 @@
         <div class="container p-5">
             <div class="columns">
                 <div class="column is-half mt-3">
-                    <img :src="(`https://starwars-visualguide.com/assets/img/vehicles/${getInfoVehicles.url.split(/\D/g).join('')}.jpg`)"
+                    <img :src="getImageVehicles"
                         alt="image film">
                 </div>
                 <div class="column has-text-left is-half mt-3">
@@ -33,7 +33,7 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'infoVehicles',
     computed: {
-        ...mapGetters(['getInfoVehicles'])
+        ...mapGetters(['getInfoVehicles','getImageVehicles'])
     },
     mounted() {
         document.getElementById("op6").style.borderBottom = 'solid rgb(191, 147, 0) 3px';

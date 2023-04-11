@@ -10,7 +10,7 @@
                                     alt="image film">
                             </figure>
                             <a class="nav-link" @click="setInfoFilm(item), showImageFilm(item)">
-                                <p style="color:gray" class="title is-size-6">Episode {{ item.episode_id }}</p>
+                                <p style="color:gray" v-on="num" class="title is-size-6">Episode {{ item.episode_id }}</p>
                                 <p style="color:gray" class="title has-text-weight-bold is-size-5">{{ item.title }}</p>
                             </a>
                         </div>
@@ -25,6 +25,11 @@
 import { mapGetters } from 'vuex'
 export default {
     name: 'ShowFilms',
+    data() {
+        return {
+            romNum: ''
+        }
+    },
     computed: {
         ...mapGetters(['getFilms', 'getImageFilm']),
         orderFilms() {
@@ -47,7 +52,37 @@ export default {
                     i++;
                 }
             return this.getFilms;
-        }
+        },
+        num() {
+            let i = 0;
+            while (i < 6) {
+                if (this.getFilms[i].episode_id == 1) {
+                    this.romNum = 'I'
+                    console.log(this.romNum)
+                }
+                if (this.getFilms[i].episode_id == 2) {
+                    this.romNum = 'II'
+                    console.log(this.romNum)
+                }
+                if (this.getFilms[i].episode_id == 3) {
+                    this.romNum = 'III'
+                    console.log(this.romNum)
+                }
+                if (this.getFilms[i].episode_id == 4) {
+                    this.romNum = 'IV'
+                    console.log(this.romNum)
+                }
+                if (this.getFilms[i].episode_id == 5) {
+                    this.romNum = 'V'
+                    console.log(this.romNum)
+                }
+                if (this.getFilms[i].episode_id == 6) {
+                    this.romNum = 'VI'
+                    console.log(this.romNum)
+                }
+                i++;
+            }
+        },
     },
     mounted() {
         document.getElementById("op1").style.borderBottom = 'solid rgb(191, 147, 0) 3px';

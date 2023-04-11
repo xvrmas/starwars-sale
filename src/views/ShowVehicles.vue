@@ -7,12 +7,13 @@
                         <div class="card-image">
                             <figure class="image">
                                 <img :src="(`https://starwars-visualguide.com/assets/img/vehicles/${item.url.split(/\D/g).join('')}.jpg`)"
-                                    alt="image film">
+                                    @error ="setErrorImg" alt="image film">
                             </figure>
                             <a class="nav-link">
-                                <p style="color:gray" @click="getInfoVehicles(item)" class="title is-size-5">{{
+                                <p style="color:gray" @click="getInfoVehicles(item),  showImageVehicle(item)" class="title is-size-5">{{
                                     item.name
                                 }} </p>
+
                             </a>
                         </div>
                     </div>
@@ -29,6 +30,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import notImg from '@/assets/errorImg/notImg.jpg'
 export default {
     name: 'showVehicles',
 
@@ -42,6 +44,9 @@ export default {
         document.getElementById("op6").style.borderBottom = 'none';
     },
     methods: {
+        setErrorImg(e) {
+            e.target.src = notImg
+        },
         getInfoVehicles(item) {
             this.$store.state.infoVehicles = item
             this.$router.push('/infoVehicles')
@@ -60,6 +65,11 @@ export default {
             }
             this.$store.dispatch("GET_VEHICLES")
         },
+        showImageVehicle: function (item) {
+            this.$store.state.numImg = item.url.split(/\D/g).join('')
+            this.$store.dispatch("GET_IMAGEVEHICLES", item)
+        },
+
     }
 
 
@@ -79,6 +89,5 @@ export default {
 
 img {
     border-bottom: solid rgb(191, 147, 0) 3px;
-
 }
 </style>
